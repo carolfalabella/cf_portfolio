@@ -5,22 +5,26 @@
     <meta charset="utf-8">
     <meta name="author" content="Caroline Falabella">
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is key to allowing Responsive Design occur online. -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
 
   <body>
 
+    <!-- <div class="container"> -->
+
+
 <!-- ********************** Header ********************** -->
-    <header class="main-header">
+    <header class="main-nav">
 
       <div class="logo">
-        <img class="logo-img" src="images\CFLogo1.png" alt="Logo" width="130"/>
+        <img class="logo-img" src="images\CFLogo1.png" alt="Logo"/>
       </div>
 
       <nav class="topnav">
         <a href="#">
-          <img src="images\hamburguerMenu.svg" alt="top menu" style="width:42px;height:42px;border:0;">
+          <img class="menu" src="images\hamburguerMenu.svg" alt="top menu" style="width:42px;height:42px;border:0;">
         </a>
         <!-- <a href="#">
           <ul>
@@ -34,19 +38,22 @@
 
 
     <section id="Page-Intro">
-      <h2>Oi, I am Caroline Falabella</h2>
-      <h1>full stack designer based in Seattle.</h1>
-      <h2>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h2>
+        <h2>Oi,<br><br> I am Caroline Falabella</h2>
+        <h1>Full Stack Designer Based in Seattle.</h1>
+        <h2>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h2>
+
     </section>
+
 
 
 <!-- ********************** Projects ********************** -->
     <main>
       <section class="case-study">
-        <a href="#"><img src="images\PlaneSky.png" alt="Fui Case Study link"></a>
+        <!-- <a href="#"><img src="images\PlaneSky.png" alt="Fui Case Study link"></a> -->
         <div class="proj-image">
           <img src="images\fui_mockup.png" alt="Fui Mockup">
         </div>
+
         <div class="proj-description">
           <h1>FUI Travel App</h1>
           <h3>Case Study</h3>
@@ -61,7 +68,7 @@
 
       <div id="contact">
         <h3>Thanks for stopping by.</h3>
-        <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at carolfalabella@gmail.com</p>
+        <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at <a href="carolfalabella@gmail.com">carolfalabella@gmail.com</a></p>
       </div>
 
       <div class="copyright">
@@ -80,6 +87,6 @@
       </div>
 
     </footer>
-
+  <!-- </div>  <!-- container --> -->
   </body>
 </html>

@@ -1,0 +1,275 @@
+/******************************************************************/
+/** FOR ALL *******************************************************/
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Roboto;
+  margin: auto 0;
+  /* line-height: 1.6; */
+  /* border: 6px solid red; */
+}
+
+h1 { font-size: 40px; font-weight: 600; font-variant-caps: titling-caps;}
+h2 { font-size: 30px; font-weight: 500;}
+h3 { font-size: 22px; font-weight: 600;}
+h4 { font-size: 22px; font-weight: 400;}
+h5 { font-size: 14px; font-weight: 600; text-transform: uppercase;}
+h6 { font-size: 12px; font-weight: lighter;  }
+.findings p{ font-style: italic; font-weight: 300;}
+
+
+/***** Top NAV ****************************/
+
+.main-nav {
+  /* border: 6px solid red; */
+  align-items: center;
+  display: flex;
+  justify-content: space-between; /*how the content will be displayied on the flex box. */
+  padding: 1em 6em;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+*/
+}
+
+.logo-img {
+  width: 60px;
+}
+
+.menu {
+  width: 60px;
+}
+
+
+/******************************************************************/
+/******************************************************************/
+/***** HOME PAGE ***************************/
+
+/***************** INTRO *******************/
+
+#Page-Intro {
+  margin-top:
+  height: 480px;
+  background-color: #EDEAE5;
+  padding: 5em 6em;
+  /* position: fixed;
+  left: 0;
+  right: 0;  */
+}
+
+#Page-Intro h1 {
+  color: #016670;
+}
+
+
+/*************** HOME Content *********************/
+/* .container {
+  width: 75%;
+  margin: 0 auto;
+} */
+
+.case-study {
+  align-items: center;
+  background-image: url("../images/PlaneSky.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  /* margin-top: 700px; */
+  overflow: auto;
+}
+
+.proj-image img {
+  height: 600px;
+  /* padding: 4em 6em 1em 4em; */
+  /* border: 6px solid Yellow; */
+}
+
+.proj-description h3, h1 {
+margin: 0;
+line-height: 44px;
+}
+
+a {
+  color: #016670;
+}
+
+
+
+/******************************************************************/
+/******************************************************************/
+
+/***** project PAGE ***************************/
+/***************** INTRO *******************/
+
+
+#Page-Intro-case {
+  /* applying opacity on gradient */
+  background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ), url("../images/PlaneSky.png"); /* IE6-9 */
+
+  url("../images/PlaneSky.png"); /* FF3.6-15 */
+  /* background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */ */
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1em 6em;
+}
+
+.projName img {
+  align-items: center;
+  height: 300px;
+}
+
+.projName {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding-top: 2em;
+}
+
+#description {
+  text-align: center;
+}
+
+.challenge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  width: 100%;
+}
+
+.problem { padding-right: 1em; }
+
+.sol { padding-left: 1em; }
+
+
+/***************** TIMELINE *******************/
+.timeline {
+  display: inline;
+}
+
+
+/***************** CONTENT *******************/
+#projPage {
+    padding: 0 6em;
+    /* display: flex; */
+}
+
+.process span {
+  font-weight: lighter;
+}
+
+.process h3  {
+  padding: 4em 0 .3em 0;
+  /* border: 6px solid Yellow; */
+  border-bottom: 3px solid #FCE181;
+  margin: 1em 0;
+}
+
+#projPage p {
+  padding-bottom: 1em;
+}
+
+.findings {
+  background-color: #EDEAE5;
+  padding: 2em;
+  margin: 4em 0;
+}
+
+#survey img {
+  height: 300px;
+}
+
+#swot img {
+  width: 200px;
+}
+
+#personas img {
+  wmax-width: 70%;
+}
+
+#userStories img {
+  max-width: 100%;
+}
+
+#wireframes img {
+  width: 15%;
+  margin: 0 2px;
+}
+
+#branding img {
+  width: 20%;
+  margin: 0 1em;
+}
+
+#abTest img {
+  width: 20%;
+  margin: 0 2px;
+}
+
+#hiFi-prototype img {
+  width: 20%;
+  margin: 0 2px;
+}
+
+.img {
+  text-align: center;
+}
+
+.button {
+  border: 2px solid #016670;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 4em auto 2em auto;
+  padding: 8px 24px;
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  /* background-color: #016670;
+  color: white; */
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),
+              0 10px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+
+/*************** footer *********************/
+
+#contact {
+  text-align: center;
+  background-color: #FCE181;
+  padding: 1em;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 6em;
+}
+
+.media-links {      /* border: 6px solid Yellow; */
+  padding-top: 18px;
+}
+
+
+/*****  change Fos all links */
+a {
+  color: #016670;
+  text-decoration: none;
+  font-weight: 600;
+}
