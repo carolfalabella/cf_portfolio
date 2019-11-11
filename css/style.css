@@ -41,9 +41,39 @@ h6 { font-size: 12px; font-weight: lighter;  }
   width: 60px;
 }
 
-.menu {
-  width: 60px;
+
+#page-nav #hamburger {
+  display: none;
 }
+
+#page-nav label {
+  display: inline-block;
+  color: #000000;
+  background: #ffffff;
+  font-style: normal;
+  font-size: 2em;
+  padding: 10px 0;
+}
+
+/* Break down menu items into vertical */
+#page-nav ul li {
+  border-top: 1px solid #333;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Toggle show/hide menu on checkbox click */
+#page-nav ul {
+  display: none;
+}
+#page-nav input:checked ~ ul {
+  display: block;
+}
+
+/* .menu {
+  width: 60px;
+} */
 
 
 /******************************************************************/
@@ -156,14 +186,86 @@ a {
 
 /***************** TIMELINE *******************/
 .timeline {
-  display: inline;
+  display: flex;
+  background-color: #FCE181;
+  justify-content: center;
+  /* max-width: 800px; */
+  margin: 30px auto;
+  width: 100%;
+}
+
+/* drawing line */
+.timeline .events {
+  position: relative;
+  background-color: #000000;
+  height: 2px;
+  width: 100%;
+  border-radius: 4px;
+  margin: 4em 0;
+ }
+
+ .timeline .events ol {
+   margin: 0;
+   padding: 0;
+   text-align: center;
+ }
+
+/* .timeline ul {
+  list-style: none;
+} */
+
+
+.timeline .events ul li {
+  display: inline-block;
+  margin: 0;
+  padding: .75em 2em;
+}
+
+.timeline .events ul li a {
+  text-decoration: none;
+  position: relative;
+  /* top: -32px; */
+}
+
+.timeline .events ul li a:after {
+  content: '';
+  position: absolute;
+  bottom: 19px;
+  left: 50%;
+  right: auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #000000;
+  background-color: #fff;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.timeline .events ul li a:hover::after {
+  background-color: #016670;
+  border-color: #016670;
+}
+
+.timeline .events ul li a.selected:after {
+  background-color: #016670;
+  border-color: #000;
 }
 
 
 /***************** CONTENT *******************/
-#projPage {
+.events-content {
     padding: 0 6em;
     /* display: flex; */
+}
+
+.events-content li {
+  /* display: none; */
+  list-style: none;
+}
+
+.events-content li.selected {
+  display: initial;
 }
 
 .process span {
@@ -177,7 +279,7 @@ a {
   margin: 1em 0;
 }
 
-#projPage p {
+.events-content p {
   padding-bottom: 1em;
 }
 
@@ -192,7 +294,8 @@ a {
 }
 
 #swot img {
-  width: 200px;
+  width: 180px;
+  height: auto;
 }
 
 #personas img {
