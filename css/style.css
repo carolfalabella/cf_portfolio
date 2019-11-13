@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', Roboto;
+  font-family: ‘Poppins’, sans-serif;
   margin: auto 0;
   /* line-height: 1.6; */
   /* border: 6px solid red; */
@@ -29,8 +29,8 @@ h6 { font-size: 12px; font-weight: lighter;  }
   display: flex;
   justify-content: space-between; /*how the content will be displayied on the flex box. */
   padding: 1em 10em;
-  position: fixed
-  width: 100%;
+  /* position: fixed
+  width: 100%; */
 }
 
 .logo-img {
@@ -40,7 +40,7 @@ h6 { font-size: 12px; font-weight: lighter;  }
 #menuToggle {
   display: block;
   position: relative;
-  top: 10px;
+  top: 10px 0;
   z-index: 0;
 
   -webkit-user-select: none;
@@ -118,8 +118,8 @@ h6 { font-size: 12px; font-weight: lighter;  }
 {
   /* display: none; */
   position: absolute;
-  width: 300px;
-  margin: -100px 0 0 0;
+  width: 350px;
+  margin: -100px 0 0 -150px;
   padding: 50px;
   padding-top: 125px;
 
@@ -247,7 +247,7 @@ a {
 }
 
 #description {
-  text-align: center;
+  text-align: left;
 }
 
 .challenge {
@@ -265,48 +265,41 @@ a {
 
 /***************** TIMELINE *******************/
 .timeline {
-  display: flex;
+  /* display: block; */
   background-color: #FCE181;
-  justify-content: center;
-  /* max-width: 800px; */
-  margin: 30px auto;
-  width: 100%;
+  height: 5em;
 }
 
 /* drawing line */
-.timeline .events {
-  position: relative;
+.timeline #events {
+  display: flex;
   background-color: #000000;
   height: 2px;
   width: 100%;
-  border-radius: 4px;
   margin: 4em 0;
  }
 
- .timeline .events ol {
+ .timeline #events ul {
+   /* text-align: center; */
+   display: flex;
+   flex-direction: row;
    margin: 0;
    padding: 0;
-   text-align: center;
  }
 
-/* .timeline ul {
-  list-style: none;
-} */
-
-
-.timeline .events ul li {
-  display: inline-block;
-  margin: 0;
+ /* space up items */
+.timeline #events ul li {
   padding: .75em 2em;
+  list-style: none;
 }
 
-.timeline .events ul li a {
+ /* drawing circles */
+ .timeline #events ul li a {
   text-decoration: none;
   position: relative;
-  /* top: -32px; */
 }
 
-.timeline .events ul li a:after {
+.timeline #events ul li a:after {
   content: '';
   position: absolute;
   bottom: 19px;
@@ -321,15 +314,30 @@ a {
   transform: translateX(-50%);
 }
 
-.timeline .events ul li a:hover::after {
+.timeline #events ul li a:hover::after {
   background-color: #016670;
   border-color: #016670;
 }
 
-.timeline .events ul li a.selected:after {
+.timeline #events ul li a.selected:after {
   background-color: #016670;
   border-color: #000;
 }
+
+ /* fix on top when scrolled */
+.nav-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.scroll-shadow {
+  box-shadow: 0 0 10px #333;
+}
+
+
+
 
 
 /***************** CONTENT *******************/
@@ -363,9 +371,11 @@ a {
 }
 
 .findings {
-  background-color: #EDEAE5;
-  padding: 2em;
+  background: #f9f9f9;
+  border-left: 6px solid #ccc;
+  line-height: 1.4;
   margin: 4em 0;
+  padding: 1em 2em;
 }
 
 #survey img {
@@ -378,7 +388,7 @@ a {
 }
 
 #personas img {
-  wmax-width: 70%;
+  max-width: 70%;
 }
 
 #userStories img {
@@ -409,24 +419,29 @@ a {
   text-align: center;
 }
 
-.button {
-  border: 2px solid #016670;
+button {
+  background-color: #ffffff;
+  border: 3px solid #016670;
   border-radius: 4px;
+  display: block;
   font-size: 14px;
-  margin: 4em auto 2em auto;
-  padding: 8px 24px;
+  margin: 4em auto;
+  padding: 8px;
   width: 200px;
-  text-align: center;
   text-transform: uppercase;
+  align-content: center;
 }
 
-.button:hover {
-  /* background-color: #016670;
-  color: white; */
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),
-              0 10px 50px 0 rgba(0,0,0,0.19);
+
+button:hover {
+  background-color: #016670;
+  color: white;
 }
 
+button a:hover  {
+  background-color: #016670;
+  color: white;
+}
 
 
 /*************** footer *********************/
@@ -455,3 +470,104 @@ a {
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ************************************************* */
+/* ************** MEDIA QUERIES ******************** */
+
+
+/****** medium devices *******/
+@media screen and (max-width: 990px) {
+.main-nav { padding: 1em 4em; }
+
+#Page-Intro {
+  height: 480px;
+  padding: 4em 6em;
+}
+.case-study {
+  justify-content: flex-start;
+  padding-top: 1em;
+}
+
+.copyright {
+ padding: 1em 4em;
+ justify-content: space-between;
+ vertical-align: middle;
+ }
+
+ .media-links {
+   padding: 0;
+ }
+
+.copyright h6 { margin: 0;}
+
+ /********* project.html ***********************/
+#Page-Intro-case { padding: 1em 2em; }
+.projName { justify-content: center;}
+.challenge { justify-content: space-around;}
+.events-content { padding: 0 4em; }
+.events-content ol { padding: 0; }
+
+/* #survey img { width: 100%; height: auto;} */
+#swot img { width: 150px; }
+#personas img { max-width: 80%;}
+#wireframes img { width: 230px; }
+#branding img { width: 145px; }
+#abTest img { width: 170px; }
+#hiFi-prototype img { width: 230px;}
+
+}
+
+
+
+ /* small devices */
+@media screen and (max-width: 575px) {
+h1 { font-size: 30px; }
+h2 { font-size: 17px; }
+h3 { font-size: 18px; }
+h6 { font-size: 10px; }
+.logo-img { width: 40px; }
+.main-nav { padding: 1em 2em; }
+
+#Page-Intro {
+  height: 400px;
+  padding: 4em 2em;
+}
+#Page-Intro h1 { margin-right: 4em;}
+.case-study {
+  flex-direction: column-reverse;
+  text-align: center;
+  padding-top: 34px;
+  margin: 0;
+}
+.proj-description h3, h1 {
+  margin: 0;
+  line-height: 40px;
+}
+.copyright {
+  padding: 1em 2em;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.copyright h6 { margin: 0;}
+
+  /***** project.html ****/
+#Page-Intro-case { padding: 1em 2em; }
+.projName { flex-direction: column; }
+.challenge { flex-direction: column; }
+.problem, .sol { padding: 0; }
+.events-content { padding: 0 2em; }
+.events-content ol { padding: 0; }
+
+#survey img { width: 100%; height: auto;}
+#swot img { width: 150px; }
+#personas img { max-width: 100%; }
+#branding img { width: 160px; }
+#wireframes img,
+#abTest img,
+#hiFi-prototype img { width: 182px; }
+}
+
+/* Large smartphones	(min-width: 575px)
+Tablets	(min-width: 575px)
+Laptops	(min-width: 991px)
+Desktops	(min-width: 1199px) */

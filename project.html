@@ -7,27 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is key to allowing Responsive Design occur online. -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href=“https://fonts.googleapis.com/css?family=Poppins&display=swap” rel=“stylesheet”>
   </head>
 
 
   <body>
 
   <!-- ********************** Header ********************** -->
-    <header class="main-nav">
+  <header class="main-nav">
 
-      <div class="logo">
-        <img class="logo-img" src="images\CFLogo1.png" alt="Logo" width="130"/>
+    <div class="logo">
+      <img class="logo-img" src="images\CFLogo1.png" alt="Logo"/>
+    </div>
+
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.-->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+          <a href="index.html"><li>Home</li></a>
+          <a href="#"><li>About</li></a>
+          <a href="#"><li>Contact</li></a>
+        </ul>
       </div>
-
-      <nav class="topnav">
-        <a href="#">
-          <img src="images\hamburguerMenu.svg" alt="top menu" style="width:42px;height:42px;border:0;">
-        </a>
-      </nav>
-    </header>
+    </nav>
+  </header>
 
 
-
+<!-- ********************** Introduction ********************** -->
 
     <section id="Page-Intro-case">
 
@@ -64,31 +85,18 @@
 
     <!-- ********************** Timeline ********************** -->
     <div class="timeline">
-      <div class="events">
-        <ol>
-          <ul>
-            <li>
-              <a href="#survey" class="selected">Research</a>
-            </li>
-            <li>
-              <a href="#personas">Strategy</a>
-            </li>
-            <li>
-              <a href="#wireframes">Information Archtecture</a>
-            </li>
-            <li>
-              <a href="#branding">Branding</a>
-            </li>
-            <li>
-              <a href="#abTest">Visual & Testing</a>
-            </li>
-            <li>
-              <a href="#hiFi-prototype">Prototype</a>
-            </li>
-          </ul>
-        </ol>
-
-      </div>  <!--  events -->
+        <nav role="navigation" id="events">
+          <ol>
+            <ul>
+              <li><a href="#survey" class="selected">Research</a></li>
+              <li><a href="#personas">Strategy</a></li>
+              <li><a href="#wireframes">Information Archtecture</a></li>
+              <li><a href="#branding">Branding</a></li>
+              <li><a href="#abTest">Visual & Testing</a></li>
+              <li><a href="#hiFi-prototype">Prototype</a></li>
+            </ul>
+          </ol>
+        </nav>
     </div>  <!-- timeline -->
 
 
@@ -113,10 +121,11 @@
 
             <div class="img">
               <img src="images\Survey1.png" alt="survey photo1">
-              <img src="images\Survey2.png" alt="survey photo2">
+              <img class="s2" src="images\Survey2.png" alt="survey photo2">
             </div>
           </section>
 
+          <section id="swot">
             <header class="process">
               <h3>Understand competition - <span>SWOT</span></h3>
             </header>
@@ -135,6 +144,7 @@
                 People can make travel plans using google trips but they can't collaborate. <br>
                 Tripit charges big amount of money for that. And sharing itinerary are also limited for those who have the application installed only.</p>
             </article>
+          </section>
         </li>
 
         <li id="personas">
@@ -221,8 +231,8 @@
 
             <article class="findings">
               <p><b>Name</b> - I was looking for something short, simple and fun but also unique. FUI, in Brazilian Portuguese means “gone” or “I am out of here”. Why Portuguese? Because that’s where the app is from.<br>
-                <b>Colors</b> - FUI is different from all the existing business oriented travel apps. So I moved away from all white and blue. Pink is feminine but it's also fun and playful, it’s inviting for mothers who usually do the family vacation plans. Blue is a color loved by everyone, it reminds us of the sky, but it’s also associated with stability and trust which is our brand strongly identify. Yellow is associated with happiness.<br>
-                <b>Logo</b> -  Logo started with tons of sketching on paper. Eventually I narrowed down to 3 best. I designed roughly all 3 on figma and asked a few people which one they like the best. The paper plane was everyone’s favorite. Since it’s very playful thought it would represent the brand well.</p>
+                <br><b>Colors</b> - FUI is different from all the existing business oriented travel apps. So I moved away from all white and blue. Pink is feminine but it's also fun and playful, it’s inviting for mothers who usually do the family vacation plans. Blue is a color loved by everyone, it reminds us of the sky, but it’s also associated with stability and trust which is our brand strongly identify. Yellow is associated with happiness.<br>
+                <br><b>Logo</b> -  Logo started with tons of sketching on paper. Eventually I narrowed down to 3 best. I designed roughly all 3 on figma and asked a few people which one they like the best. The paper plane was everyone’s favorite. Since it’s very playful thought it would represent the brand well.</p>
             </article>
           </section>
         </li>
@@ -280,10 +290,11 @@
               <img src="images/hifimockup/share.png" alt="hi-fi mockup">
             </div>
 
-            <div class="button">
-              <a href="https://www.figma.com/proto/t7GxAm251xtWmT25uyAc5s/Travel-app-HiFi-MockUp?node-id=57%3A221&viewport=42010%2C-8689%2C3.4277658462524414&scaling=scale-down">View Prototype</a>
+            <button type="button" name="button"><a href="https://www.figma.com/proto/t7GxAm251xtWmT25uyAc5s/Travel-app-HiFi-MockUp?node-id=57%3A221&viewport=42010%2C-8689%2C3.4277658462524414&scaling=scale-down">View Prototype</a></button>
 
-            </div>
+            <!-- <div class="button">
+              <a href="https://www.figma.com/proto/t7GxAm251xtWmT25uyAc5s/Travel-app-HiFi-MockUp?node-id=57%3A221&viewport=42010%2C-8689%2C3.4277658462524414&scaling=scale-down">View Prototype</a>
+            </div> -->
           </section>
 
           <section id="reflection">
@@ -322,7 +333,7 @@
           </div>
         </div>
       </footer>
-
+  <script src="script.js"></script>
   </body>
 
 </html>
