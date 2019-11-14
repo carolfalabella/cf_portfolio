@@ -217,7 +217,6 @@ a {
 /***** project PAGE ***************************/
 /***************** INTRO *******************/
 
-
 #Page-Intro-case {
   /* applying opacity on gradient */
   background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* FF3.6-15 */
@@ -235,7 +234,7 @@ a {
 
 .projName img {
   align-items: center;
-  height: 300px;
+  height: 400px;
 }
 
 .projName {
@@ -264,79 +263,73 @@ a {
 
 
 /***************** TIMELINE *******************/
+
+/* The actual timeline (the vertical ruler) */
+
 .timeline {
-  /* display: block; */
-  background-color: #FCE181;
-  height: 5em;
-}
-
-/* drawing line */
-.timeline #events {
-  display: flex;
-  background-color: #000000;
-  height: 2px;
-  width: 100%;
-  margin: 4em 0;
- }
-
- .timeline #events ul {
-   /* text-align: center; */
-   display: flex;
-   flex-direction: row;
-   margin: 0;
-   padding: 0;
- }
-
- /* space up items */
-.timeline #events ul li {
-  padding: .75em 2em;
-  list-style: none;
-}
-
- /* drawing circles */
- .timeline #events ul li a {
-  text-decoration: none;
   position: relative;
+  margin: 0 8em 0 10em ;
+  /* background-color: #f9f9f9; */
+  /* border: 1px solid red; */
 }
 
-.timeline #events ul li a:after {
+/* the vertical ruler */
+.timeline::after {
   content: '';
   position: absolute;
-  bottom: 19px;
-  left: 50%;
-  right: auto;
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: 2px solid #000000;
-  background-color: #fff;
-  transition: 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.timeline #events ul li a:hover::after {
-  background-color: #016670;
-  border-color: #016670;
-}
-
-.timeline #events ul li a.selected:after {
-  background-color: #016670;
-  border-color: #000;
-}
-
- /* fix on top when scrolled */
-.nav-scrolled {
-  position: fixed;
+  width: 2px;
+  background-color: black;
   top: 0;
-  left: 0;
+  bottom: 0;
+}
+
+
+/* Container around content */
+.container {
+  padding: 40px 20px 40px 30px;
+  position: relative;
   width: 100%;
 }
 
-.scroll-shadow {
-  box-shadow: 0 0 10px #333;
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: -12px;
+  background-color: white;
+  border: 3px solid #000;
+  top: 50px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
+/* Add arrows to the right container (pointing left) */
+.container::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 53px;
+  width: 0;
+  z-index: 1;
+  left: 20px;
+  border: medium solid black;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
 
+/* The actual content */
+.content {
+  border: 1px solid white;
+  padding: 0 30px;
+  position: relative;
+  border-radius: 4px;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 20px 0 #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 20px 0 #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 20px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
 
 
 
@@ -361,9 +354,9 @@ a {
 
 .process h3  {
   padding: 4em 0 .3em 0;
-  /* border: 6px solid Yellow; */
   border-bottom: 3px solid #FCE181;
   margin: 1em 0;
+  align-items: center;
 }
 
 .events-content p {
@@ -502,6 +495,7 @@ a {
 
  /********* project.html ***********************/
 #Page-Intro-case { padding: 1em 2em; }
+.timeline { margin: 1em 2em; }
 .projName { justify-content: center;}
 .challenge { justify-content: space-around;}
 .events-content { padding: 0 4em; }
@@ -516,6 +510,13 @@ a {
 #hiFi-prototype img { width: 230px;}
 
 }
+
+/* * Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+
+}
+
 
 
 
@@ -557,6 +558,10 @@ h6 { font-size: 10px; }
 .problem, .sol { padding: 0; }
 .events-content { padding: 0 2em; }
 .events-content ol { padding: 0; }
+
+.timeline { margin: 1em 1em; }
+.container { padding: 20px 0 20px 20px; }
+.content { padding: 0 15px; }
 
 #survey img { width: 100%; height: auto;}
 #swot img { width: 150px; }
