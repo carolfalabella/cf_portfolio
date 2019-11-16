@@ -9,7 +9,7 @@
 body {
   font-family: ‘Poppins’, sans-serif;
   margin: auto 0;
-  /* line-height: 1.6; */
+  line-height: 1.4;
   /* border: 6px solid red; */
 }
 
@@ -162,8 +162,9 @@ h6 { font-size: 12px; font-weight: lighter;  }
 #Page-Intro {
   margin-top:
   height: 480px;
-  background-color: #EDEAE5;
+  background-color: #f9f9f9;
   padding: 5em 10em;
+  line-height: normal;
   /* position: fixed;
   left: 0;
   right: 0;  */
@@ -181,32 +182,44 @@ h6 { font-size: 12px; font-weight: lighter;  }
 } */
 
 .case-study {
+  height: 80vh;
+  overflow: hidden;
+}
+
+.case-study a {
+  height: 100%;
   align-items: center;
   background-image: url("../images/PlaneSky.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: space-around;
   position: relative;
-  /* margin-top: 700px; */
   overflow: auto;
+  transition: all 0.5s ease;
 }
 
+.case-study a:hover
+{
+  transform: scale(1.2);
+}
+
+
 .proj-image img {
-  height: 600px;
-  /* padding: 4em 10em 1em 4em; */
-  /* border: 6px solid Yellow; */
+  height: 500px;
+}
+ /* shadow */
+
+
+a {
+  color: #016670;
 }
 
 .proj-description h3, h1 {
 margin: 0 50px 0 0;
 line-height: 44px;
-
-}
-
-a {
-  color: #016670;
-
+color: black;
 }
 
 
@@ -286,7 +299,7 @@ a {
 
 /* Container around content */
 .container {
-  padding: 40px 20px 40px 30px;
+  padding: 40px 20px 40px 40px;
   position: relative;
   width: 100%;
 }
@@ -298,7 +311,7 @@ a {
   width: 25px;
   height: 25px;
   left: -12px;
-  background-color: white;
+  background-color:  #FCE181;
   border: 3px solid #000;
   top: 50px;
   border-radius: 50%;
@@ -313,7 +326,7 @@ a {
   top: 53px;
   width: 0;
   z-index: 1;
-  left: 20px;
+  left: 30px;
   border: medium solid black;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
@@ -331,37 +344,25 @@ a {
   box-shadow:         3px 3px 20px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
-
+/* .content h5 {
+  color: #FCE181;
+  text-shadow:
+} */
 
 /***************** CONTENT *******************/
-.events-content {
-    padding: 0 10em;
-    /* display: flex; */
-}
 
-.events-content li {
-  /* display: none; */
-  list-style: none;
-}
-
-.events-content li.selected {
-  display: initial;
-}
 
 .process span {
   font-weight: lighter;
 }
 
 .process h3  {
-  padding: 4em 0 .3em 0;
+  padding: 2em 0 .3em 0;
   border-bottom: 3px solid #FCE181;
   margin: 1em 0;
   align-items: center;
 }
 
-.events-content p {
-  padding-bottom: 1em;
-}
 
 .findings {
   background: #f9f9f9;
@@ -443,6 +444,7 @@ button a:hover  {
   text-align: center;
   background-color: #FCE181;
   padding: 1em;
+  line-height: normal;
 }
 
 .copyright {
@@ -464,21 +466,80 @@ a {
   font-weight: 600;
 }
 
-/* ************************************************* */
-/* ************** MEDIA QUERIES ******************** */
+/*******************************************************/
+ /********* Bio Page ***********************************/
 
+#mainBio {
+  margin: 2em 0;
+}
+
+/* quote style  */
+.quotation{
+  quotes: "\201C""\201D""\2018""\2019";
+  font-style: italic;
+  padding-top: 2em;
+}
+
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 20px;
+  color: #ccc;
+  font-size: 3em;
+}
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+blockquote { max-width: 50%; }
+blockquote footer{
+  margin:0;
+  text-align: right;
+  font-style: italic;
+}
+/* end of quote style  */
+
+#professional, #personal {
+  padding: 2em 10em;
+}
+
+#professional h1 { color: #016670;}
+
+#personal button {
+  margin: 4em 0;
+}
+
+
+
+
+/*******************************************************/
+/********* Media Queries ***********************************/
 
 /****** medium devices *******/
 @media screen and (max-width: 990px) {
 .main-nav { padding: 1em 4em; }
-
 #Page-Intro {
   height: 480px;
-  padding: 4em 6em;
+  padding: 4em 4em;
 }
-.case-study {
-  justify-content: flex-start;
+.case-study a {
+  justify-content: space-around;
   padding-top: 1em;
+}
+.proj-image img {
+  height: 600px;
 }
 
 .copyright {
@@ -486,13 +547,8 @@ a {
  justify-content: space-between;
  vertical-align: middle;
  }
-
- .media-links {
-   padding: 0;
- }
-
+.media-links { padding: 0;}
 .copyright h6 { margin: 0;}
-
  /********* project.html ***********************/
 #Page-Intro-case { padding: 1em 2em; }
 .timeline { margin: 1em 2em; }
@@ -500,27 +556,19 @@ a {
 .challenge { justify-content: space-around;}
 .events-content { padding: 0 4em; }
 .events-content ol { padding: 0; }
-
-/* #survey img { width: 100%; height: auto;} */
 #swot img { width: 150px; }
 #personas img { max-width: 80%;}
 #wireframes img { width: 230px; }
 #branding img { width: 145px; }
 #abTest img { width: 170px; }
 #hiFi-prototype img { width: 230px;}
+/***** Bio ****/
 
+#professional, #personal { padding: 1em 6em; }
+blockquote { max-width: 60%; margin: 2em 1em; }
 }
 
-/* * Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-
-
-}
-
-
-
-
- /* small devices */
+/* small devices */
 @media screen and (max-width: 575px) {
 h1 { font-size: 30px; }
 h2 { font-size: 17px; }
@@ -529,40 +577,48 @@ h6 { font-size: 10px; }
 .logo-img { width: 40px; }
 .main-nav { padding: 1em 2em; }
 
-#Page-Intro {
-  height: 400px;
-  padding: 4em 2em;
+#Page-Intro h1 {
+ margin-right: 0;
 }
-#Page-Intro h1 { margin-right: 4em;}
-.case-study {
-  flex-direction: column-reverse;
-  text-align: center;
-  padding-top: 34px;
-  margin: 0;
+
+#Page-Intro {
+ height: 400px;
+ padding: 4em 2em;
+}
+
+.case-study a {
+ flex-direction: column-reverse;
+ text-align: center;
+ padding-top: 34px;
+ margin: 0;
+}
+.proj-image img {
+  height: 450px;
 }
 .proj-description h3, h1 {
-  margin: 0;
-  line-height: 40px;
+ margin: 0;
+ line-height: 40px;
 }
 .copyright {
-  padding: 1em 2em;
-  flex-direction: column-reverse;
-  text-align: center;
+ padding: 1em 2em;
+ flex-direction: column-reverse;
+ text-align: center;
 }
-.copyright h6 { margin: 0;}
 
-  /***** project.html ****/
-#Page-Intro-case { padding: 1em 2em; }
+
+.copyright h6 { margin: 0;}
+ /***** project.html ****/
+#Page-Intro-case {  padding: 1em 2em; }
+#description {text-align: center; }
 .projName { flex-direction: column; }
 .challenge { flex-direction: column; }
+.challenge h3 { text-align: center;}
 .problem, .sol { padding: 0; }
 .events-content { padding: 0 2em; }
 .events-content ol { padding: 0; }
-
 .timeline { margin: 1em 1em; }
-.container { padding: 20px 0 20px 20px; }
+.container { padding: 20px 0 20px 30px; }
 .content { padding: 0 15px; }
-
 #survey img { width: 100%; height: auto;}
 #swot img { width: 150px; }
 #personas img { max-width: 100%; }
@@ -570,9 +626,10 @@ h6 { font-size: 10px; }
 #wireframes img,
 #abTest img,
 #hiFi-prototype img { width: 182px; }
+ /***** Bio ****/
+#professional, #personal { padding: 1em 2em 2em 3em; }
+blockquote { max-width: 100%; margin: 2em 1em; }
+#personal button {
+  margin: 0 auto;
+  margin-top: 4em; }
 }
-
-/* Large smartphones	(min-width: 575px)
-Tablets	(min-width: 575px)
-Laptops	(min-width: 991px)
-Desktops	(min-width: 1199px) */
