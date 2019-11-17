@@ -28,7 +28,7 @@ h6 { font-size: 12px; font-weight: lighter;  }
   align-items: center;
   display: flex;
   justify-content: space-between; /*how the content will be displayied on the flex box. */
-  padding: 1em 10em;
+  padding: 1em 16em;
   /* position: fixed
   width: 100%; */
 }
@@ -85,41 +85,31 @@ h6 { font-size: 12px; font-weight: lighter;  }
   transform-origin: 0% 100%;
 }
 
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+/* Transform all the slices of hamburger into a crossmark. */
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
 }
 
-/*
- * But let's hide the middle one.
- */
+/* But let's hide the middle one.*/
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
+/* Ohyeah and the last one should go the other direction*/
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
+/* Make this absolute positioned at the top right of the screen */
 #menu
 {
   /* display: none; */
   position: absolute;
   width: 350px;
-  margin: -100px 0 0 -150px;
+  margin: -100px 0 0 -60px;
   padding: 50px;
   padding-top: 125px;
 
@@ -148,10 +138,6 @@ h6 { font-size: 12px; font-weight: lighter;  }
   transform: none;
 }
 
-/* .menu {
-  width: 60px;
-} */
-
 
 /******************************************************************/
 /******************************************************************/
@@ -160,20 +146,21 @@ h6 { font-size: 12px; font-weight: lighter;  }
 /***************** INTRO *******************/
 
 #Page-Intro {
-  margin-top:
-  height: 480px;
+  /* height: 480px; */
+  /* display: flex; */
+  vertical-align: middle;
   background-color: #f9f9f9;
-  padding: 5em 10em;
+  padding: 5em 16em;
   line-height: normal;
-  /* position: fixed;
-  left: 0;
-  right: 0;  */
 }
 
 #Page-Intro h1 {
   color: #016670;
 }
 
+#Page-Intro h2 {
+  width: 80%;
+}
 
 /*************** HOME Content *********************/
 /* .container {
@@ -194,7 +181,7 @@ h6 { font-size: 12px; font-weight: lighter;  }
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   position: relative;
   overflow: auto;
   transition: all 0.5s ease;
@@ -203,21 +190,20 @@ h6 { font-size: 12px; font-weight: lighter;  }
 .case-study a:hover
 {
   transform: scale(1.2);
-}
 
+}
 
 .proj-image img {
   height: 500px;
+  margin-left: 20vw;
 }
- /* shadow */
-
 
 a {
   color: #016670;
 }
 
-.proj-description h3, h1 {
-margin: 0 50px 0 0;
+.proj-description h3, .proj-description h1 {
+margin: 0 10vw;
 line-height: 44px;
 color: black;
 }
@@ -242,7 +228,7 @@ color: black;
 
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 1em 10em;
+  padding: 1em 14em;
 }
 
 .projName img {
@@ -299,7 +285,7 @@ color: black;
 
 /* Container around content */
 .container {
-  padding: 40px 20px 40px 40px;
+  padding: 2em 4em;
   position: relative;
   width: 100%;
 }
@@ -326,7 +312,7 @@ color: black;
   top: 53px;
   width: 0;
   z-index: 1;
-  left: 30px;
+  left: 54px;
   border: medium solid black;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
@@ -335,7 +321,7 @@ color: black;
 /* The actual content */
 .content {
   border: 1px solid white;
-  padding: 0 30px;
+  padding: 0 4em;
   position: relative;
   border-radius: 4px;
   background-color: white;
@@ -343,12 +329,10 @@ color: black;
   -moz-box-shadow:    3px 3px 20px 0 #ccc;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 20px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-
-/* .content h5 {
-  color: #FCE181;
-  text-shadow:
+/* 
+.content p {
+  width: 70%;
 } */
-
 /***************** CONTENT *******************/
 
 
@@ -363,13 +347,13 @@ color: black;
   align-items: center;
 }
 
-
 .findings {
   background: #f9f9f9;
   border-left: 6px solid #ccc;
   line-height: 1.4;
   margin: 4em 0;
   padding: 1em 2em;
+  width: 70%;
 }
 
 #survey img {
@@ -451,7 +435,7 @@ button a:hover  {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  padding: 0 10em;
+  padding: 0 16em;
 }
 
 .media-links {      /* border: 6px solid Yellow; */
@@ -523,52 +507,9 @@ blockquote footer{
 
 
 
-
 /*******************************************************/
 /********* Media Queries ***********************************/
-
-/****** medium devices *******/
-@media screen and (max-width: 990px) {
-.main-nav { padding: 1em 4em; }
-#Page-Intro {
-  height: 480px;
-  padding: 4em 4em;
-}
-.case-study a {
-  justify-content: space-around;
-  padding-top: 1em;
-}
-.proj-image img {
-  height: 600px;
-}
-
-.copyright {
- padding: 1em 4em;
- justify-content: space-between;
- vertical-align: middle;
- }
-.media-links { padding: 0;}
-.copyright h6 { margin: 0;}
- /********* project.html ***********************/
-#Page-Intro-case { padding: 1em 2em; }
-.timeline { margin: 1em 2em; }
-.projName { justify-content: center;}
-.challenge { justify-content: space-around;}
-.events-content { padding: 0 4em; }
-.events-content ol { padding: 0; }
-#swot img { width: 150px; }
-#personas img { max-width: 80%;}
-#wireframes img { width: 230px; }
-#branding img { width: 145px; }
-#abTest img { width: 170px; }
-#hiFi-prototype img { width: 230px;}
-/***** Bio ****/
-
-#professional, #personal { padding: 1em 6em; }
-blockquote { max-width: 60%; margin: 2em 1em; }
-}
-
-/* small devices */
+/************ small devices ******************/
 @media screen and (max-width: 575px) {
 h1 { font-size: 30px; }
 h2 { font-size: 17px; }
@@ -576,16 +517,13 @@ h3 { font-size: 18px; }
 h6 { font-size: 10px; }
 .logo-img { width: 40px; }
 .main-nav { padding: 1em 2em; }
-
 #Page-Intro h1 {
  margin-right: 0;
 }
-
 #Page-Intro {
  height: 400px;
  padding: 4em 2em;
 }
-
 .case-study a {
  flex-direction: column-reverse;
  text-align: center;
@@ -593,7 +531,8 @@ h6 { font-size: 10px; }
  margin: 0;
 }
 .proj-image img {
-  height: 450px;
+  height: 380px;
+  margin: auto;
 }
 .proj-description h3, h1 {
  margin: 0;
@@ -604,9 +543,8 @@ h6 { font-size: 10px; }
  flex-direction: column-reverse;
  text-align: center;
 }
-
-
 .copyright h6 { margin: 0;}
+/************************/
  /***** project.html ****/
 #Page-Intro-case {  padding: 1em 2em; }
 #description {text-align: center; }
@@ -614,11 +552,9 @@ h6 { font-size: 10px; }
 .challenge { flex-direction: column; }
 .challenge h3 { text-align: center;}
 .problem, .sol { padding: 0; }
-.events-content { padding: 0 2em; }
-.events-content ol { padding: 0; }
 .timeline { margin: 1em 1em; }
 .container { padding: 20px 0 20px 30px; }
-.content { padding: 0 15px; }
+.content { padding: 0 30px; }
 #survey img { width: 100%; height: auto;}
 #swot img { width: 150px; }
 #personas img { max-width: 100%; }
@@ -633,3 +569,69 @@ blockquote { max-width: 100%; margin: 2em 1em; }
   margin: 0 auto;
   margin-top: 4em; }
 }
+
+
+/* ************************** */
+/****** medium devices *******/
+@media screen and (min-width: 576px) and (max-width: 990px) {
+.main-nav { padding: 1em 6em; }
+#Page-Intro , .copyright { padding: 1em 6em; }
+#Page-Intro h1, { padding: 1em 10em; }
+.proj-image img { height: 400px; }
+.copyright { padding: 1em 4em; }
+
+ /********* project.html ***********************/
+#Page-Intro-case {  padding: 1em 5em; }
+.timeline { margin: 1em 4em; }
+.content { padding: 0 35px; }
+.findings { width: 80%; }
+#swot img { width: 100px; }
+#wireframes img { width: 200px; }
+#branding img { width: 160px; }
+#abTest img { width: 200px; }
+#hiFi-prototype img { width: 200px;}
+/***** Bio ****/
+#professional, #personal { padding: 1em 6em; }
+blockquote { max-width: 80%; margin: 2em 1em; }
+}
+
+/****** medium devices *******/
+@media screen and (min-width: 991px) and (max-width: 1199px) {
+.main-nav { padding: 1em 8em; }
+#Page-Intro { padding: 2em 8em; }
+.case-study a {
+  justify-content: space-around;
+  padding-top: 1em;
+}
+.proj-image img {
+  height: 500px;
+}
+.copyright {
+ padding: 1em 10em;
+ justify-content: space-between;
+ vertical-align: middle;
+ }
+.media-links { padding: 0;}
+.copyright h6 { margin: 0;}
+/********* project.html ***********************/
+#Page-Intro-case { padding: 1em 2em; }
+.timeline { margin: 1em 0; }
+.projName { justify-content: center;}
+.challenge { justify-content: space-around;}
+#swot img { width-max: 150px; }
+#personas img { max-width: 80%;}
+#wireframes img { width: 230px; }
+#branding img { width: 145px; }
+#abTest img { width: 170px; }
+#hiFi-prototype img { width: 230px;}
+/***** Bio ****/
+#professional, #personal { padding: 1em 6em; }
+blockquote { max-width: 60%; margin: 2em 1em; }
+}
+
+
+/* Device	Size
+Large smartphones	(min-width: 575px)
+Tablets	(min-width: 575px)
+Laptops	(min-width: 991px)
+Desktops	(min-width: 1199px) */
