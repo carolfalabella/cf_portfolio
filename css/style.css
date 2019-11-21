@@ -10,170 +10,114 @@ body {
   font-family: ‘Poppins’, sans-serif;
   margin: auto 0;
   line-height: 1.4;
-  /* border: 6px solid red; */
 }
 
-h1 { font-size: 40px; font-weight: 600; font-variant-caps: titling-caps;}
+/* h1 { font-size: 40px; font-weight: 600; font-variant-caps: titling-caps;}
 h2 { font-size: 30px; font-weight: 500;}
 h3 { font-size: 22px; font-weight: 600;}
 h4 { font-size: 22px; font-weight: 400;}
 h5 { font-size: 14px; font-weight: 600; text-transform: uppercase;}
 h6 { font-size: 12px; font-weight: lighter;  }
+.findings p{ font-style: italic; font-weight: 300;} */
+
+h1 { font-size: 2em; font-weight: 600; font-variant-caps: titling-caps;}
+h2 { font-size: 1.6em; font-weight: 500;}
+h3 { font-size: 1.4em; font-weight: 600;}
+h4 { font-size: 1.4em; font-weight: 400;}
+h5 {  font-weight: 600; text-transform: uppercase;}
+h6 {  font-weight: lighter;  }
 .findings p{ font-style: italic; font-weight: 300;}
+
+/*****  change Fos all links */
+a {
+  color: #016670;
+  text-decoration: none;
+  font-weight: 500;
+}
 
 
 /***** Top NAV ****************************/
 
 .main-nav {
-  align-items: center;
-  display: flex;
-  justify-content: space-between; /*how the content will be displayied on the flex box. */
-  padding: 1em 16em;
-  /* position: fixed
-  width: 100%; */
+  background: white;
+  margin: 0 auto;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding: 1em;
 }
 
 .logo-img {
   width: 60px;
+  float: left;
 }
 
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 10px 0;
-  z-index: 0;
-
-  -webkit-user-select: none;
-  user-select: none;
+nav {
+  float: right;
 }
 
-#menuToggle input
-{
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  cursor: pointer;
-  opacity: 0; /* hide checkbox inout */
-  z-index: 2; /* and place it over the hamburger */
-  -webkit-touch-callout: none;
-}
-
-/*  Just a quick hamburger */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 2px;
-  margin-bottom: 7px;
-  position: relative;
-
-  background: #000000;
-  border-radius: 3px;
-
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-/* Transform all the slices of hamburger into a crossmark. */
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-}
-
-/* But let's hide the middle one.*/
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/* Ohyeah and the last one should go the other direction*/
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/* Make this absolute positioned at the top right of the screen */
 #menu
 {
-  /* display: none; */
-  position: absolute;
-  width: 350px;
-  margin: -100px 0 0 -60px;
-  padding: 50px;
-  padding-top: 125px;
-
-  background: #ffffff;
+  display: inline-block;
   list-style-type: none;
-  /* -webkit-font-smoothing: antialiased; */
-  /* to stop flickering of text in safari */
-
-  transform-origin: 0% 0%;
-  transform: translate(100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-#menu li
-{
-  padding: 15px 0;
-  border-bottom: .5px solid black;
-  text-transform: uppercase;
+#menu li {
+  float: right;
+  text-transform: capitalize;
 }
 
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul
-{
-  transform: none;
+#menu li a {
+  display: block;
+  color: black;
+  text-align: right;
+  padding: 1em;
+  vertical-align: middle;
+  /* font-weight: 500; */
 }
 
+#menu li a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+}
 
 /******************************************************************/
 /******************************************************************/
 /***** HOME PAGE ***************************/
 
 /***************** INTRO *******************/
+.scroll-container {
+  position: relative;
+  width: 100%;
+}
 
 #Page-Intro {
-  /* height: 480px; */
-  /* display: flex; */
-  vertical-align: middle;
+  margin-top: 10vh;
+
   background-color: #f9f9f9;
-  padding: 5em 16em;
   line-height: normal;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 8em 0;
 }
 
 #Page-Intro h1 {
   color: #016670;
 }
-
-#Page-Intro h2 {
-  width: 80%;
+.wrapper-pageIntro {
+    margin: 0 auto;
+    max-width: 80vw;
+    position: relative;
 }
 
-/*************** HOME Content *********************/
-/* .container {
-  width: 75%;
-  margin: 0 auto;
-} */
 
 .case-study {
-  height: 80vh;
-  overflow: hidden;
-}
-
-.case-study a {
   height: 100%;
   align-items: center;
   background-image: url("../images/PlaneSky.png");
@@ -181,21 +125,16 @@ h6 { font-size: 12px; font-weight: lighter;  }
   background-size: cover;
   background-position: center;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column-reverse;
+  text-align: center;
+  padding: 4em 0;
+
   position: relative;
-  overflow: auto;
   transition: all 0.5s ease;
 }
 
-.case-study a:hover
-{
-  transform: scale(1.2);
-
-}
-
 .proj-image img {
-  height: 500px;
-  margin-left: 20vw;
+  max-width: 60vw;
 }
 
 a {
@@ -217,6 +156,7 @@ color: black;
 /***************** INTRO *******************/
 
 #Page-Intro-case {
+  margin-top: 10vh;
   /* applying opacity on gradient */
   background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* FF3.6-15 */
   background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* Chrome10-25,Safari5.1-6 */
@@ -228,35 +168,28 @@ color: black;
 
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 1em 14em;
+  padding: 2em 1em;
 }
 
 .projName img {
-  align-items: center;
-  height: 500px;
+  max-width: 70vw;
+  margin: auto;
 }
 
 .projName {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
   text-align: center;
-  padding-top: 2em;
-}
 
-#description {
-  text-align: left;
 }
 
 .challenge {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 1em 0;
+  padding: 1em;
   width: 100%;
 }
-
-.problem { padding-right: 1em; }
 
 .sol { padding-left: 1em; }
 
@@ -267,9 +200,7 @@ color: black;
 
 .timeline {
   position: relative;
-  margin: 0 8em 0 10em ;
-  /* background-color: #f9f9f9; */
-  /* border: 1px solid red; */
+  margin-left: 4vw;
 }
 
 /* the vertical ruler */
@@ -282,10 +213,9 @@ color: black;
   bottom: 0;
 }
 
-
 /* Container around content */
 .container {
-  padding: 2em 4em;
+  padding: 2em 2em;
   position: relative;
   width: 100%;
 }
@@ -304,7 +234,7 @@ color: black;
   z-index: 1;
 }
 
-/* Add arrows to the right container (pointing left) */
+/* Add arrows pointing left */
 .container::before {
   content: " ";
   height: 0;
@@ -312,7 +242,7 @@ color: black;
   top: 53px;
   width: 0;
   z-index: 1;
-  left: 54px;
+  left: 17px;
   border: medium solid black;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
@@ -321,7 +251,7 @@ color: black;
 /* The actual content */
 .content {
   border: 1px solid white;
-  padding: 0 4em;
+  padding: 0 1em 0 2em;
   position: relative;
   border-radius: 4px;
   background-color: white;
@@ -329,7 +259,7 @@ color: black;
   -moz-box-shadow:    3px 3px 20px 0 #ccc;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 20px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-/* 
+/*
 .content p {
   width: 70%;
 } */
@@ -353,11 +283,12 @@ color: black;
   line-height: 1.4;
   margin: 4em 0;
   padding: 1em 2em;
-  width: 70%;
+  width: 100%;
 }
 
-#survey img {
-  height: 300px;
+#survey img, #personas img, #userStories img {
+  max-width: 100%;
+  height: auto;
 }
 
 #swot img {
@@ -365,60 +296,35 @@ color: black;
   height: auto;
 }
 
-#personas img {
-  max-width: 70%;
-}
-
-#userStories img {
-  max-width: 100%;
-}
-
-#wireframes img {
-  width: 15%;
-  margin: 0 2px;
-}
-
-#branding img {
-  width: 20%;
-  margin: 0 1em;
-}
-
-#abTest img {
-  width: 20%;
-  margin: 0 2px;
-}
-
-#hiFi-prototype img {
-  width: 20%;
-  margin: 0 2px;
+#wireframes img, #branding img, #abTest img, #hiFi-prototype img  {
+  max-width: 47%;
+  margin: 2px;
 }
 
 .img {
   text-align: center;
 }
 
-button {
-  background-color: #ffffff;
-  border: 3px solid #016670;
+.button {
+  background: transparent;
+  border: 2px solid #016670;
   border-radius: 4px;
   display: block;
-  font-size: 14px;
   margin: 4em auto;
   padding: 8px;
   width: 200px;
-  text-transform: uppercase;
   align-content: center;
+  text-align: center;
 }
 
 
-button:hover {
-  background-color: #016670;
+.button:hover {
+  background: #016670;
   color: white;
 }
 
-button a:hover  {
-  background-color: #016670;
-  color: white;
+.proj-description .button {
+  margin: 1em auto;
 }
 
 
@@ -433,9 +339,8 @@ button a:hover  {
 
 .copyright {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
-  padding: 0 16em;
+  flex-direction: column-reverse;
+  text-align: center;
 }
 
 .media-links {      /* border: 6px solid Yellow; */
@@ -443,25 +348,19 @@ button a:hover  {
 }
 
 
-/*****  change Fos all links */
-a {
-  color: #016670;
-  text-decoration: none;
-  font-weight: 600;
-}
-
 /*******************************************************/
  /********* Bio Page ***********************************/
 
 #mainBio {
-  margin: 2em 0;
+  margin-top: 10vh;
+  padding: 2em;
 }
 
 /* quote style  */
 .quotation{
   quotes: "\201C""\201D""\2018""\2019";
   font-style: italic;
-  padding-top: 2em;
+  padding: 2em;
 }
 
 .quotation:before {
@@ -487,7 +386,7 @@ a {
   font-size: 3em;
 }
 
-blockquote { max-width: 50%; }
+blockquote { max-width: 90%; }
 blockquote footer{
   margin:0;
   text-align: right;
@@ -496,7 +395,7 @@ blockquote footer{
 /* end of quote style  */
 
 #professional, #personal {
-  padding: 2em 10em;
+  /* padding: 2em 10em; */
 }
 
 #professional h1 { color: #016670;}
@@ -509,129 +408,34 @@ blockquote footer{
 
 /*******************************************************/
 /********* Media Queries ***********************************/
-/************ small devices ******************/
+
 @media screen and (max-width: 575px) {
-h1 { font-size: 30px; }
-h2 { font-size: 17px; }
-h3 { font-size: 18px; }
-h6 { font-size: 10px; }
-.logo-img { width: 40px; }
-.main-nav { padding: 1em 2em; }
-#Page-Intro h1 {
- margin-right: 0;
-}
-#Page-Intro {
- height: 400px;
- padding: 4em 2em;
-}
-.case-study a {
- flex-direction: column-reverse;
- text-align: center;
- padding-top: 34px;
- margin: 0;
-}
-.proj-image img {
-  height: 380px;
-  margin: auto;
-}
-.proj-description h3, h1 {
- margin: 0;
- line-height: 40px;
-}
-.copyright {
- padding: 1em 2em;
- flex-direction: column-reverse;
- text-align: center;
-}
-.copyright h6 { margin: 0;}
-/************************/
- /***** project.html ****/
-#Page-Intro-case {  padding: 1em 2em; }
-#description {text-align: center; }
-.projName { flex-direction: column; }
-.challenge { flex-direction: column; }
-.challenge h3 { text-align: center;}
-.problem, .sol { padding: 0; }
-.timeline { margin: 1em 1em; }
-.container { padding: 20px 0 20px 30px; }
-.content { padding: 0 30px; }
-#survey img { width: 100%; height: auto;}
-#swot img { width: 150px; }
-#personas img { max-width: 100%; }
-#branding img { width: 160px; }
-#wireframes img,
-#abTest img,
-#hiFi-prototype img { width: 182px; }
- /***** Bio ****/
-#professional, #personal { padding: 1em 2em 2em 3em; }
-blockquote { max-width: 100%; margin: 2em 1em; }
-#personal button {
-  margin: 0 auto;
-  margin-top: 4em; }
+  body { font-size: .8em; }
+  .logo-img { width: 40px; }
 }
 
 
-/* ************************** */
-/****** medium devices *******/
-@media screen and (min-width: 576px) and (max-width: 990px) {
-.main-nav { padding: 1em 6em; }
-#Page-Intro , .copyright { padding: 1em 6em; }
-#Page-Intro h1, { padding: 1em 10em; }
-.proj-image img { height: 400px; }
-.copyright { padding: 1em 4em; }
-
- /********* project.html ***********************/
-#Page-Intro-case {  padding: 1em 5em; }
-.timeline { margin: 1em 4em; }
-.content { padding: 0 35px; }
-.findings { width: 80%; }
-#swot img { width: 100px; }
-#wireframes img { width: 200px; }
-#branding img { width: 160px; }
-#abTest img { width: 200px; }
-#hiFi-prototype img { width: 200px;}
-/***** Bio ****/
-#professional, #personal { padding: 1em 6em; }
-blockquote { max-width: 80%; margin: 2em 1em; }
-}
-
-/****** medium devices *******/
-@media screen and (min-width: 991px) and (max-width: 1199px) {
-.main-nav { padding: 1em 8em; }
-#Page-Intro { padding: 2em 8em; }
-.case-study a {
-  justify-content: space-around;
-  padding-top: 1em;
-}
-.proj-image img {
-  height: 500px;
-}
-.copyright {
- padding: 1em 10em;
- justify-content: space-between;
- vertical-align: middle;
- }
-.media-links { padding: 0;}
-.copyright h6 { margin: 0;}
-/********* project.html ***********************/
-#Page-Intro-case { padding: 1em 2em; }
-.timeline { margin: 1em 0; }
-.projName { justify-content: center;}
-.challenge { justify-content: space-around;}
-#swot img { width-max: 150px; }
-#personas img { max-width: 80%;}
-#wireframes img { width: 230px; }
-#branding img { width: 145px; }
-#abTest img { width: 170px; }
-#hiFi-prototype img { width: 230px;}
-/***** Bio ****/
-#professional, #personal { padding: 1em 6em; }
-blockquote { max-width: 60%; margin: 2em 1em; }
+@media screen and (min-width: 550px) {
+  .main-nav { padding: 1em 6em; }
+  .wrapper-pageIntro { padding: 1em 3em; }
+  .proj-image img { max-width: 25vw; }
+  .copyright {
+    flex-direction: row;
+    justify-content: space-around;  }
+  .projName img { max-width: 30vw; }
+  .challenge, .timeline { padding: 1em 2em 1em 4em  }
+  .problem, .sol { margin-right: 1em;}
+  .timeline { margin-left: 2vw; }
+  .content { padding: 0 2em; }
+  .container::before { left: 22px; }
+  #mainBio { padding: 4em 6em; }
 }
 
 
-/* Device	Size
-Large smartphones	(min-width: 575px)
-Tablets	(min-width: 575px)
-Laptops	(min-width: 991px)
-Desktops	(min-width: 1199px) */
+@media screen and (min-width: 991px) {
+  .main-nav {  padding: 1em 16em; }
+  .wrapper-pageIntro { padding: 1em 12em }
+  .projName img { max-width: 20vw; }
+  .challenge, .timeline { padding: 1em 12em  }
+  #mainBio { padding: 4em 16em; }
+}

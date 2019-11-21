@@ -13,67 +13,51 @@
 
   <body>
 
-    <!-- <div class="container"> -->
+    <!-- <div class="wrapContent"> -->
+      <!-- ********************** Header ********************** -->
+          <header class="main-nav">
 
-
-<!-- ********************** Header ********************** -->
-    <header class="main-nav">
-
-      <div class="logo">
-        <img class="logo-img" src="images\CFLogo1.png" alt="Logo"/>
-      </div>
-
-      <nav role="navigation">
-        <div id="menuToggle">
-          <!--
-          A fake / hidden checkbox is used as click reciever,  -->
-          <input type="checkbox" />
-
-          <!--Some spans to act as a hamburger.-->
-          <span></span>
-          <span></span>
-          <span></span>
-
-          <!--
-          Too bad the menu has to be inside of the button
-          but hey, it's pure CSS magic.
-          -->
-          <ul id="menu">
-            <a href="index.html"><li>Home</li></a>
-            <a href="bio.html"><li>About</li></a>
-            <a href="#contact"><li>Contact</li></a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-<!-- ********************** Page Intro ********************** -->
-
-    <section id="Page-Intro">
-        <h2>Oi, I am Caroline Falabella</h2>
-        <h1>Full Stack Designer Based in Seattle</h1>
-        <h2>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h2>
-
-    </section>
-
-
-
-<!-- ********************** Projects ********************** -->
-    <main>
-      <section class="case-study">
-        <a href="project.html">
-            <div class="proj-image">
-              <img src="images\fui_mockup.png" alt="Fui Mockup">
+            <div id="logo">
+              <a href="index.html"><img class="logo-img" src="images\CFLogo1.png" alt="Logo"/></a>
             </div>
 
-            <div class="proj-description">
-              <h1>FUI Travel App</h1>
-              <h3>Case Study</h3>
-            </div>
-        </a>
-      </section>
-    </main>
 
+            <nav role="navigation">
+                <ul id="menu">
+                  <li><a href="bio.html">About</a></li>
+                  <li><a href="#fui">Portfolio</a></li>
+                </ul>
+            </nav>
+          </header>
+
+      <!-- ********************** Page Intro ********************** -->
+      <div class="scroll-container">
+
+          <section id="Page-Intro">
+            <div class="wrapper-pageIntro">
+              <h2>Oi, I am Caroline Falabella</h2>
+              <h1>Full Stack Designer Based in Seattle</h1>
+              <h2>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h2>
+            </div>
+          </section>
+
+
+
+          <!-- ********************** Projects ********************** -->
+
+          <section class="case-study" id="fui">
+                <div class="proj-image">
+                  <img src="images\fui_mockup.png" alt="Fui Mockup">
+                </div>
+
+                <div class="proj-description">
+                  <h1>Fui Travel App</h1>
+                  <a class="button fui" href="project.html">Case Study</a>
+                </div>
+          </section>
+      </div> <!-- scroll-container -->
+
+    <!-- </div>  wrapContent -->
 
 
 <!-- ********************** Footer ********************** -->
