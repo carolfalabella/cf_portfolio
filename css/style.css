@@ -44,7 +44,7 @@ a {
   width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   padding: 1em;
 }
 
@@ -97,14 +97,12 @@ nav {
 }
 
 #Page-Intro {
-  margin-top: 10vh;
-
   background-color: #f9f9f9;
   line-height: normal;
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 8em 0;
+  padding: 10em 0 6em 0;
 }
 
 #Page-Intro h1 {
@@ -120,7 +118,7 @@ nav {
 .case-study {
   height: 100%;
   align-items: center;
-  background-image: url("../images/PlaneSky.png");
+  background-image: url("../images/PlaneSky.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -134,7 +132,7 @@ nav {
 }
 
 .proj-image img {
-  max-width: 60vw;
+  max-height: 60vh;
 }
 
 a {
@@ -158,12 +156,12 @@ color: black;
 #Page-Intro-case {
   margin-top: 10vh;
   /* applying opacity on gradient */
-  background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* FF3.6-15 */
-  background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* Chrome10-25,Safari5.1-6 */
-  background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.png"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ), url("../images/PlaneSky.png"); /* IE6-9 */
+  background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ), url("../images/PlaneSky.svg"); /* IE6-9 */
 
-  url("../images/PlaneSky.png"); /* FF3.6-15 */
+  url("../images/PlaneSky.svg"); /* FF3.6-15 */
   /* background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */ */
 
   background-repeat: no-repeat;
@@ -172,7 +170,7 @@ color: black;
 }
 
 .projName img {
-  max-width: 70vw;
+  max-height: 60vh;
   margin: auto;
 }
 
@@ -180,7 +178,6 @@ color: black;
   display: flex;
   flex-direction: column;
   text-align: center;
-
 }
 
 .challenge {
@@ -215,7 +212,7 @@ color: black;
 
 /* Container around content */
 .container {
-  padding: 2em 2em;
+  padding: 2em;
   position: relative;
   width: 100%;
 }
@@ -287,12 +284,11 @@ color: black;
 }
 
 #survey img, #personas img, #userStories img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
 }
 
 #swot img {
-  width: 180px;
+  width: 30%;
   height: auto;
 }
 
@@ -416,26 +412,44 @@ blockquote footer{
 
 
 @media screen and (min-width: 550px) {
-  .main-nav { padding: 1em 6em; }
+  .main-nav, #Page-Intro-case { padding: 1em 6em; }
+    #Page-Intro-case { margin-top: 15vh; }
   .wrapper-pageIntro { padding: 1em 3em; }
-  .proj-image img { max-width: 25vw; }
-  .copyright {
+  .copyright { flex-direction: row;
+    justify-content: space-around; }
+  .projName {
     flex-direction: row;
-    justify-content: space-around;  }
-  .projName img { max-width: 30vw; }
-  .challenge, .timeline { padding: 1em 2em 1em 4em  }
+    justify-content: space-around;
+    text-align: left;
+    align-items: center; }
+  #description h1, #description p { margin: 0; padding: 4px;}
   .problem, .sol { margin-right: 1em;}
-  .timeline { margin-left: 2vw; }
+  .timeline {
+    padding: 1em 2em 1em 4em;
+    margin-left: 2vw; }
   .content { padding: 0 2em; }
   .container::before { left: 22px; }
   #mainBio { padding: 4em 6em; }
+  .findings, .content div p, #reflection p  { width: 80%;  }
+  #wireframes img, #abTest img, #hiFi-prototype img, #branding img {
+    max-width: 30%; }
 }
 
 
 @media screen and (min-width: 991px) {
-  .main-nav {  padding: 1em 16em; }
-  .wrapper-pageIntro { padding: 1em 12em }
-  .projName img { max-width: 20vw; }
-  .challenge, .timeline { padding: 1em 12em  }
-  #mainBio { padding: 4em 16em; }
+  .main-nav, #Page-Intro-case {  padding: 1em 16em; }
+  .wrapper-pageIntro, .timeline { padding: 1em 12em }
+  .container { padding: 2em 4em; }
+  .content { padding: 0 4em; }
+  .container::before { left: 55px; }
+  /* #mainBio { padding: 4em 20em 4em 16em; } */
+  #mainBio {
+    max-width: 50vw;
+    margin-left: 16em;
+    padding: 4em 0; }
+
+  #survey img, #personas img {
+    max-width: 47%; }
+  /* #wireframes img, #abTest img, #hiFi-prototype img, #branding img {
+    max-width: 30%; } */
 }
