@@ -35,7 +35,6 @@ a {
   font-weight: 500;
 }
 
-
 /***** Top NAV ****************************/
 
 .main-nav {
@@ -422,6 +421,7 @@ blockquote footer{
     justify-content: space-around;
     text-align: left;
     align-items: center; }
+  .projName img { margin: 0; }
   #description h1, #description p { margin: 0; padding: 4px;}
   .problem, .sol { margin-right: 1em;}
   .timeline {
@@ -442,12 +442,19 @@ blockquote footer{
   .container { padding: 2em 4em; }
   .content { padding: 0 4em; }
   .container::before { left: 55px; }
-  /* #mainBio { padding: 4em 20em 4em 16em; } */
   #mainBio {
-    max-width: 50vw;
-    margin-left: 16em;
-    padding: 4em 0; }
-
+    width: 50vw;
+    margin: 4em auto;
+    max-width: 1440px; }
+  .projName, .challenge {
+    max-width: 1050px;
+    margin: 0 auto; }
+  .timeline {
+    max-width: 1450px;
+   margin: 0 auto; }
+  .wrapper-pageIntro {
+     max-width: 1145px;
+    margin: 0 auto; }
   #survey img, #personas img {
     max-width: 47%; }
   /* #wireframes img, #abTest img, #hiFi-prototype img, #branding img {
