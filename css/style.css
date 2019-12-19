@@ -7,53 +7,86 @@
 }
 
 body {
-  font-family: ‘Poppins’, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: auto 0;
-  line-height: 1.4;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #212121;
 }
 
-/* h1 { font-size: 40px; font-weight: 600; font-variant-caps: titling-caps;}
-h2 { font-size: 30px; font-weight: 500;}
-h3 { font-size: 22px; font-weight: 600;}
-h4 { font-size: 22px; font-weight: 400;}
-h5 { font-size: 14px; font-weight: 600; text-transform: uppercase;}
-h6 { font-size: 12px; font-weight: lighter;  }
-.findings p{ font-style: italic; font-weight: 300;} */
-
-h1 { font-size: 2em; font-weight: 600; font-variant-caps: titling-caps;}
-h2 { font-size: 1.6em; font-weight: 500;}
-h3 { font-size: 1.4em; font-weight: 600;}
-h4 { font-size: 1.4em; font-weight: 400;}
-h5 {  font-weight: 600; text-transform: uppercase;}
-h6 {  font-weight: lighter;  }
+h1 { font-size: 2.3rem; font-variant-caps: titling-caps;}
+h2 { font-size: 1.3rem; font-weight: 600;}
+h3 { font-size: 1.3rem; font-weight: 600;}
+h4 { font-size: 1rem; }
+h5 { font-weight: 600; text-transform: uppercase;}
+h6 { font-size: 0.75rem; font-weight: lighter;  }
 .findings p{ font-style: italic; font-weight: 300;}
+
+p, h2, h3 {
+  margin-bottom: 1rem;
+}
+
 
 /*****  change Fos all links */
 a {
   color: #016670;
   text-decoration: none;
-  font-weight: 500;
+  font-weight:600;
 }
 
 /***** Top NAV ****************************/
+/* HEADER with drop-shadow on scroll */
+.menu-header {
+  height: 80px;  /* 74 + 16px */
+  position: sticky;
+  -webkit-position: sticky;
+  top: -16px;  /* negative top allows for 16 pixels of movement before sticking */
+  z-index: 1; /* make sure header overlaps main*/
+  -webkit-backface-visibility: hidden; /* fix weird flickering issue in chrome: https://stackoverflow.com/a/22224884/286685 */
+}
+
+/* PSEUDO ELEMENTS to create drop-shadow */
+.menu-header::before,
+.menu-header::after {
+  content: '';
+  display: block;
+  height: 16px;
+  position: sticky;
+  -webkit-position: sticky;
+}
+/* SHADOW */
+.menu-header::before {
+  top: 48px; /* shadow is at bottom of element, so at 68 + 16 = 84px */
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+}
+/* COVER */
+.menu-header::after {
+  /* linear gradient from background color to transparent acts as a transition effect so the shadow appears gradually */
+  background: linear-gradient(white 10%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.4) 70%, transparent);
+  top: 0;
+  z-index: 2; /* cover should fall over shadow */
+}
 
 .main-nav {
-  background: white;
-  margin: 0 auto;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  padding: 1em;
+  background-color: white;
+  height: 64px;
+  position: sticky;
+  top: 0px;
+  margin-top: -16px;
+  padding: 0 1em;
+  z-index: 3;
 }
 
 .logo-img {
-  width: 60px;
+  height: 60px;
   float: left;
+  padding-top: 10px;
 }
 
 nav {
   float: right;
+  padding-top: 20px;
 }
 
 #menu
@@ -67,57 +100,67 @@ nav {
 
 #menu li {
   float: right;
-  text-transform: capitalize;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
 #menu li a {
+  background-image: linear-gradient(180deg, #ffffff 10%, #016670 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-position: 0 100%;
   display: block;
-  color: black;
+  transition: background-size 0.25s ease-in;
   text-align: right;
-  padding: 1em;
   vertical-align: middle;
-  /* font-weight: 500; */
 }
-
 #menu li a:hover {
-  background-color: black;
-  color: white;
-  border-radius: 4px;
+  background-size: 100% 60%;
+  border: 0px;
 }
 
-/******************************************************************/
+.underline {
+  border-bottom: 2px solid #212121;
+}
+
 /******************************************************************/
 /***** HOME PAGE ***************************/
 
-/***************** INTRO *******************/
+/* INTRO *******************/
 .scroll-container {
   position: relative;
   width: 100%;
 }
 
 #Page-Intro {
-  background-color: #f9f9f9;
   line-height: normal;
   position: sticky;
   top: 0;
   width: 100%;
-  padding: 10em 0 6em 0;
+  padding: 6em 0;
 }
 
 #Page-Intro h1 {
   color: #016670;
+  font-weight: bold;
 }
+
+#Page-Intro h1 em {
+  font-size: 1rem;
+  color: #212121;
+  font-weight: 400;
+}
+
 .wrapper-pageIntro {
     margin: 0 auto;
     max-width: 80vw;
     position: relative;
 }
 
-
 .case-study {
   height: 100%;
   align-items: center;
-  background-image: url("../images/PlaneSky.svg");
+  background-image: url("../images/planeSky.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -125,7 +168,6 @@ nav {
   flex-direction: column-reverse;
   text-align: center;
   padding: 4em 0;
-
   position: relative;
   transition: all 0.5s ease;
 }
@@ -134,14 +176,10 @@ nav {
   max-height: 60vh;
 }
 
-a {
-  color: #016670;
-}
-
 .proj-description h3, .proj-description h1 {
-margin: 0 10vw;
-line-height: 44px;
-color: black;
+  margin: 0 10vw;
+  line-height: 44px;
+  color: black;
 }
 
 
@@ -149,18 +187,17 @@ color: black;
 /******************************************************************/
 /******************************************************************/
 
-/***** project PAGE ***************************/
+/***** FUI PAGE ***************************/
 /***************** INTRO *******************/
 
 #Page-Intro-case {
-  margin-top: 10vh;
   /* applying opacity on gradient */
-  background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* FF3.6-15 */
-  background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* Chrome10-25,Safari5.1-6 */
-  background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/PlaneSky.svg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ), url("../images/PlaneSky.svg"); /* IE6-9 */
+  background-image: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 100%), url("../images/planeSky.svg"); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/planeSky.svg"); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%), url("../images/planeSky.svg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ), url("../images/planeSky.svg"); /* IE6-9 */
 
-  url("../images/PlaneSky.svg"); /* FF3.6-15 */
+  url("../images/planeSky.svg"); /* FF3.6-15 */
   /* background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 31%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */ */
 
   background-repeat: no-repeat;
@@ -171,10 +208,17 @@ color: black;
 .projName img {
   max-height: 60vh;
   margin: auto;
+  margin-top: 2vh;
+}
+
+.projName .button {
+  margin: 0;
+  margin-top: 2vh;
 }
 
 .projName {
   display: flex;
+  padding-top: 2em;
   flex-direction: column;
   text-align: center;
 }
@@ -182,7 +226,7 @@ color: black;
 .challenge {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   padding: 1em;
   width: 100%;
 }
@@ -238,7 +282,7 @@ color: black;
   top: 53px;
   width: 0;
   z-index: 1;
-  left: 17px;
+  left: 22px;
   border: medium solid black;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
@@ -247,27 +291,27 @@ color: black;
 /* The actual content */
 .content {
   border: 1px solid white;
-  padding: 0 1em 0 2em;
+  padding: 1em 1em 0 2em;
   position: relative;
   border-radius: 4px;
   background-color: white;
-  -webkit-box-shadow: 3px 3px 20px 0 #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    3px 3px 20px 0 #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 20px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  -webkit-box-shadow: 2px 1px 15px 0 #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    2px 1px 15px 0 #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         2px 1px 15px 0 #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-/*
-.content p {
-  width: 70%;
-} */
+
+.content h4 {
+  font-variant-caps: all-petite-caps;
+  letter-spacing: 1px;
+ }
+
 /***************** CONTENT *******************/
-
-
 .process span {
   font-weight: lighter;
 }
 
 .process h3  {
-  padding: 2em 0 .3em 0;
+  padding: 1em 0 .3em 0;
   border-bottom: 3px solid #FCE181;
   margin: 1em 0;
   align-items: center;
@@ -282,36 +326,29 @@ color: black;
   width: 100%;
 }
 
-#survey img, #personas img, #userStories img {
+.p-lighter { color: gray}
+
+#wireframes img, #branding img, #abTest img, #hiFi-prototype img {
   width: 100%;
-}
-
-#swot img {
-  width: 30%;
-  height: auto;
-}
-
-#wireframes img, #branding img, #abTest img, #hiFi-prototype img  {
-  max-width: 47%;
   margin: 2px;
 }
 
-.img {
-  text-align: center;
+#swot img {
+  width: 100px;
 }
 
 .button {
-  background: transparent;
+  align-content: center;
+  background: white;
   border: 2px solid #016670;
   border-radius: 4px;
   display: block;
   margin: 4em auto;
   padding: 8px;
-  width: 200px;
-  align-content: center;
   text-align: center;
-}
-
+  transition: 0.4s;
+  width: 200px;
+  }
 
 .button:hover {
   background: #016670;
@@ -322,6 +359,17 @@ color: black;
   margin: 1em auto;
 }
 
+.zoomin img {
+  width: 100%;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -ms-transition: all 2s ease;
+  transition: all 2s ease;
+}
+.zoomin img:hover {
+  width: 130%;
+}
+
 
 /*************** footer *********************/
 
@@ -330,32 +378,43 @@ color: black;
   background-color: #FCE181;
   padding: 1em;
   line-height: normal;
+  font-weight: 600;
 }
 
 .copyright {
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
+  padding: 1em;
 }
 
-.media-links {      /* border: 6px solid Yellow; */
-  padding-top: 18px;
+.media-links a img {
+  height:32px;
+  border:0;
+  margin: 1vw;
 }
+
+.copyright h6 {
+  margin: auto 0;
+}
+
 
 
 /*******************************************************/
- /********* Bio Page ***********************************/
+/********* Bio Page ***********************************/
 
 #mainBio {
-  margin-top: 10vh;
   padding: 2em;
 }
 
 /* quote style  */
 .quotation{
   quotes: "\201C""\201D""\2018""\2019";
+  padding-bottom: 1em;
+}
+
+.quotation {
   font-style: italic;
-  padding: 2em;
 }
 
 .quotation:before {
@@ -366,7 +425,7 @@ color: black;
   left: -10px;
   position: relative;
   top: 20px;
-  color: #ccc;
+  color: #FCE181;
   font-size: 3em;
 }
 .quotation::after {
@@ -377,11 +436,15 @@ color: black;
   left: 10px;
   position: relative;
   top: 30px;
-  color: #ccc;
+  color: #FCE181;
   font-size: 3em;
 }
 
-blockquote { max-width: 90%; }
+blockquote {
+  margin: 0 auto;
+  padding: 2em;
+}
+
 blockquote footer{
   margin:0;
   text-align: right;
@@ -389,14 +452,22 @@ blockquote footer{
 }
 /* end of quote style  */
 
-#professional, #personal {
-  /* padding: 2em 10em; */
+
+#personal {
+  padding-top: 2em;
 }
 
-#professional h1 { color: #016670;}
+#professional h2 {
+  color: #016670;
+  padding: 1em 0 .2em 0;
+}
 
-#personal button {
-  margin: 4em 0;
+#mainBio img {
+  width: 100%;
+}
+
+b {
+  font-weight: bold;
 }
 
 
@@ -405,14 +476,21 @@ blockquote footer{
 /********* Media Queries ***********************************/
 
 @media screen and (max-width: 575px) {
-  body { font-size: .8em; }
   .logo-img { width: 40px; }
+  .challenge { flex-direction: column; }
+  .sol { padding: 0; }
+  .projName .button {
+    margin: 0 auto;
+  }
 }
 
 
 @media screen and (min-width: 550px) {
-  .main-nav, #Page-Intro-case { padding: 1em 6em; }
-    #Page-Intro-case { margin-top: 15vh; }
+  h1 { font-size: 3.157rem; }
+  h2 { font-size: 2.369rem; }
+  h3 { font-size: 1.777rem; }
+  h4 { font-size: 1.333rem; }
+  .main-nav, #Page-Intro-case { padding: 0 6em; }
   .wrapper-pageIntro { padding: 1em 3em; }
   .copyright { flex-direction: row;
     justify-content: space-around; }
@@ -422,29 +500,27 @@ blockquote footer{
     text-align: left;
     align-items: center; }
   .projName img { margin: 0; }
-  #description h1, #description p { margin: 0; padding: 4px;}
   .problem, .sol { margin-right: 1em;}
   .timeline {
     padding: 1em 2em 1em 4em;
     margin-left: 2vw; }
-  .content { padding: 0 2em; }
-  .container::before { left: 22px; }
-  #mainBio { padding: 4em 6em; }
-  .findings, .content div p, #reflection p  { width: 80%;  }
-  #wireframes img, #abTest img, #hiFi-prototype img, #branding img {
-    max-width: 30%; }
+  #mainBio { padding: 2em 6em; }
+  .content div p, #reflection p  { width: 80%;  }
+  #wireframes img, #abTest img, #hiFi-prototype img,   #branding img  {
+    max-width: 47%;
+  }
 }
 
 
 @media screen and (min-width: 991px) {
-  .main-nav, #Page-Intro-case {  padding: 1em 16em; }
-  .wrapper-pageIntro, .timeline { padding: 1em 12em }
-  .container { padding: 2em 4em; }
-  .content { padding: 0 4em; }
+  .main-nav, #Page-Intro-case, .wrapper-pageIntro {  padding: 0 16em; }
+  .timeline { padding: 1em 12em }
+  .container { padding: 2em 4em 0 4em; }
+  .content { padding: 1em 4em; }
   .container::before { left: 55px; }
   #mainBio {
     width: 50vw;
-    margin: 4em auto;
+    margin: 0 auto;
     max-width: 1440px; }
   .projName, .challenge {
     max-width: 1050px;
@@ -455,8 +531,7 @@ blockquote footer{
   .wrapper-pageIntro {
      max-width: 1145px;
     margin: 0 auto; }
-  #survey img, #personas img {
-    max-width: 47%; }
-  /* #wireframes img, #abTest img, #hiFi-prototype img, #branding img {
-    max-width: 30%; } */
+
+  .zoomin img { width: 80%; }
+  .zoomin img:hover { width: 100%;  }
 }

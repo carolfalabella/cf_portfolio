@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="author" content="Caroline Falabella">
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is key to allowing Responsive Design occur online. -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href=“https://fonts.googleapis.com/css?family=Poppins&display=swap” rel=“stylesheet”>
   </head>
 
 
@@ -16,21 +16,21 @@
 
 
   <!-- ********************** Header ********************** -->
-  <header class="main-nav">
-
-    <div id="logo">
-      <a href="index.html"><img class="logo-img" src="images\CFLogo1.svg" alt="Logo"/></a>
-      <!-- <h5>Caroline</h5> -->
-    </div>
-
-
-    <nav role="navigation">
-        <ul id="menu">
-          <li><a href="bio.html">About</a></li>
-          <li><a href="index.html">Portfolio</a></li>
-        </ul>
+  <header class="menu-header">
+    <div class="main-nav">
+      <div id="logo">
+        <a href="index.html"><img class="logo-img" src="images/logoCF.svg" alt="Logo"/></a>
       </div>
-    </nav>
+
+      <nav role="navigation">
+          <ul id="menu">
+            <li><a href="bio.html">About</a></li>
+            <li><a href="#" class="underline">Work</a></li>
+            <li><a href="index.html">Home</a></li>
+          </ul>
+
+      </nav>
+    </div>
   </header>
 
 <!-- ********************** Introduction ********************** -->
@@ -39,23 +39,24 @@
 
       <div class="projName">
         <div id="description">
-          <h1>FUI Case Study</h1>
+          <h2>FUI Case Study</h2>
           <p>Role: UX Design, Visual Design, Branding</p>
+          <a class="button mockup" href="https://www.figma.com/proto/t7GxAm251xtWmT25uyAc5s/Travel-app-HiFi-MockUp?node-id=57%3A221&viewport=42010%2C-8689%2C3.4277658462524414&scaling=scale-down">View Prototype</a>
         </div>
 
-        <img src="images\fui_mockup2.png" alt="Fui Mockup">
+        <img src="images/fui_mockup2.png" alt="Fui Mockup">
       </div>
 
       <div class="challenge">
         <div class="problem">
-          <h3>The Challenge</h3>
+          <h3>Challenge</h3>
           <p>I was entrusted to create a solution for people to organize, upload, share, save, create
             content and collaborate on a project accessible from any device. My challenge was to discover
             and enter that underserved market and target the right audience to best serve with an exceptional
              UX product.</p>
         </div>
         <div class="sol">
-          <h3>The Solution</h3>
+          <h3>Solution</h3>
           <p>A vacation can easily become stressful if it’s poorly planned, especially for groups.
             FUI was created to enhance people's experiences by allowing travelers to create plans in
             collaboration with others, shares notes, synchronize booking and reservations, add meetings,
@@ -79,35 +80,43 @@
             </header>
             <p>I started the project with a <a href="https://docs.google.com/forms/d/1TrgvA4ikttuPaYNj6AvkSNKYnJtNSslhFXqaypx2ZY8/viewanalytics">survey</a> to find out more about market gaps and potential users.</p>
             <article class="findings">
-              <p>People are most likely to plan trips in collaboration.<br>
-                  People are not very keen on seeing real time collaboration we assumed.<br>
-                  People are using cross-platform messengers like WhatsApp to share files and photos most of the time and not cloud services apps.<br>
-                  People do want to see files (photos, docs, notes) shared on a folder online. Future versions of the product this feature could be added.</p>
+              <p class="p-lighter">(take·a·ways)</p>
+              <p>- People are most likely to plan trips in collaboration.</p>
+              <p>- People are not very keen on seeing real time collaboration we assumed.</p>
+              <p>- People are using cross-platform messengers like WhatsApp to share files and photos most of the time and not cloud services apps.</p>
+              <p>- People do want to see files (photos, docs, notes) shared on a folder online. Future versions of the product this feature could be added.</p>
+
             </article>
             <div class="img">
-              <img src="images\Survey1.svg" alt="survey photo1">
-              <img class="s2" src="images\Survey2.svg" alt="survey photo2">
+              <div class="zoomin">
+                <img src="images/survey1.svg" alt="survey photo1">
+              </div>
+              <div class="zoomin">
+                <img src="images/survey2.svg" alt="survey photo2">
+              </div>
             </div>
-          </div>
+          </div> <!-- end survey -->
 
           <div id="swot">
             <header class="process">
               <h3>Understand competition - <span>SWOT</span></h3>
             </header>
-            <p>I did a <a href="https://docs.google.com/document/d/1vYDDiDqz2fiQWBUXafS2GGwnKq4obCG-q1FJhPwmtoE/edit?usp=sharing">SWOT analysis</a> on three competitors: Tripit, Google trips and Tripline.<br>
-              By studying their strengths and weaknesses I could identify market opportunities and avoid making the same mistakes.</p>
+            <p>I did a <a href="https://docs.google.com/document/d/1vYDDiDqz2fiQWBUXafS2GGwnKq4obCG-q1FJhPwmtoE/edit?usp=sharing">SWOT analysis</a> on three competitors: Tripit, Google trips and Tripline.</p>
+            <p>By studying their strengths and weaknesses I could identify market opportunities and avoid making the same mistakes.</p>
+
             <div class="img">
-              <img src="images\googleTrips-logo.svg" alt="google trips logo">
-              <img src="images\tripit-logo.svg" alt="Tripit logo">
-              <img src="images\tripline-logo.svg" alt="tripline logo">
+              <img src="images/googleTrips-logo.svg" alt="google trips logo">
+              <img src="images/tripit-logo.svg" alt="Tripit logo">
+              <img src="images/tripline-logo.svg" alt="tripline logo">
             </div>
             <article class="findings">
-              <p>From SWOT I identified an opportunity to enter market focusing on group travelers. Available solutions today are too focused on business travelers.<br>
-                People can make travel plans using google trips but they can't collaborate. <br>
-                Tripit charges big amount of money for that. And sharing itinerary are also limited for those who have the application installed only.</p>
+              <p class="p-lighter">(take·a·ways)</p>
+              <p>- Found opportunity to enter market focusing on group travelers. Available solutions today are too focused on business travelers.</p>
+              <p>- People can make travel plans using google trips but they can't collaborate.</p>
+              <p>- Tripit charges big amount of money for that. And sharing itinerary are also limited for those who have the application installed only.</p>
             </article>
           </div>
-        </div>  <!-- content -->
+        </div>  <!-- end content -->
       </section> <!-- container -->
 
       <section class="container">
@@ -122,8 +131,12 @@
               customers and drive the project and avoid scope creep . Lin a working mother who plans
               her family trips. And Natalie a young sales representative who travels a lot for work and for fun with friends.</p>
             <div class="img">
-              <img src="images\Persona1.svg" alt="Persona 1 image">
-              <img src="images\Persona2.svg" alt="Persona 2 image">
+              <div class="zoomin">
+                <img src="images/persona1.svg" alt="Persona1 image">
+              </div>
+              <div class="zoomin">
+                <img src="images/persona2.svg" alt="Persona2 image">
+              </div>
             </div>
           </div>
 
@@ -136,7 +149,9 @@
               and effort into consideration. Then, I took all the high priorities and turned them
               into <a href="https://drive.google.com/file/d/1ggErXz1rEj2kT6dPCHesl_tSWiRgHMVp/view?usp=sharing">user flows</a>. This helps to visualize the processes needed to complete the Minimum Viable Product (MVP). </p>
             <div class="img">
-              <img src="images\FuiUserFlow.svg" alt="Fui User Flow">
+              <div class="zoomin">
+                <img src="images/fuiUserFlow.svg" alt="Fui User Flow">
+              </div>
             </div>
           </div>
         </div>  <!-- content -->
@@ -168,10 +183,11 @@
           </div>
 
           <article class="findings">
-            <p>Reorganized content on the page (tabs and buttons)<br>
-              I added new feature for meetings<br>
-              Increased Icons size<br>
-              Added few more description details<br></p>
+            <p class="p-lighter">(changes)</p>
+            <p>- Reorganized content on the page (tabs and buttons)</p>
+            <p>- Added new feature for meetings</p>
+            <p>- Increased icons size</p>
+            <p>- Added few more description details</p>
           </article>
         </div>
       </div>  <!-- content -->
@@ -193,18 +209,17 @@
               and fly comes to mind. Based on those the brand was created. I like to start with a mood board,
               and there I place all ideas and inspirations.</p>
 
+            <p><b>Name</b> - I was looking for something short, simple and fun but also unique. FUI, in Brazilian Portuguese means “gone” or “I am out of here”. Why Portuguese? Because that’s where the app is from.</p>
+            <p><b>Colors</b> - FUI is different from all the existing business oriented travel apps. So I moved away from all white and blue. Pink is feminine but it's also fun and playful, it’s inviting for mothers who usually do the family vacation plans. Blue is a color loved by everyone, it reminds us of the sky, but it’s also associated with stability and trust which is our brand strongly identify. Yellow is associated with happiness.</p>
+            <p><b>Logo</b> - Logo started with tons of sketching on paper. Eventually I narrowed down to 3 best. I designed roughly all 3 on figma and asked a few people which one they like the best. The paper plane was everyone’s favorite. Since it’s very playful thought it would represent the brand well.</p>
+
             <div class="img">
-              <img src="images\ColorPallete.svg" alt="color pallete">
-              <img src="images\logoIdeas.svg" alt="logo sketch">
-              <img src="images\FuiLogos.svg" alt="logo variations">
-              <img src="images\typography.svg" alt="typography">
+              <img src="images/colorPallete.svg" alt="color pallete">
+              <img src="images/logoIdeas.svg" alt="logo sketch">
+              <img src="images/fuiLogos.svg" alt="logo variations">
+              <img src="images/typography.svg" alt="logo variations">
             </div>
 
-            <article class="findings">
-              <p><b>Name</b> - I was looking for something short, simple and fun but also unique. FUI, in Brazilian Portuguese means “gone” or “I am out of here”. Why Portuguese? Because that’s where the app is from.<br>
-                <br><b>Colors</b> - FUI is different from all the existing business oriented travel apps. So I moved away from all white and blue. Pink is feminine but it's also fun and playful, it’s inviting for mothers who usually do the family vacation plans. Blue is a color loved by everyone, it reminds us of the sky, but it’s also associated with stability and trust which is our brand strongly identify. Yellow is associated with happiness.<br>
-                <br><b>Logo</b> -  Logo started with tons of sketching on paper. Eventually I narrowed down to 3 best. I designed roughly all 3 on figma and asked a few people which one they like the best. The paper plane was everyone’s favorite. Since it’s very playful thought it would represent the brand well.</p>
-            </article>
           </div>
         </div>  <!-- content -->
       </section> <!-- container -->
@@ -223,18 +238,19 @@
                choose which ones they preferred and updated my designs based on my findings.</p>
 
             <div class="img">
-              <img src="images\ABtestIcons.png" alt="AB Test pic">
-              <img src="images\ABtestIcons2.png" alt="AB Test pic">
-              <img src="images\ABtestNew.png" alt="AB Test pic2">
-              <img src="images\ABtestNew2.png" alt="AB Test pic2">
+              <img src="images/ABtestIcons.png" alt="AB Test pic">
+              <img src="images/ABtestIcons2.png" alt="AB Test pic">
+              <img src="images/ABtestNew.png" alt="AB Test pic2">
+              <img src="images/ABtestNew2.png" alt="AB Test pic2">
             </div>
 
             <article class="findings">
-              <p>Dark grey instead Pink for navigation bar titles.  “Pink color may look like red and means errors”.<br>
-                Keep home screen icons. Helps with visualization of content “pictures of flights and plans and hotels makes it clearer and is nice".<br>
-                Simple instead of colored Icons.  Users said simple icons are more readable.<br>
-                Creating a plan after adding a booking and create a plan without booking. Most users want to plan vacation before buying tickets. So I should have both options.<br>
-                Remove bottom navigation and add more details on trip plans for home screen.</p>
+              <p class="p-lighter">(changes)</p>
+              <p>- Dark grey instead Pink for navigation bar titles.  “Pink color may look like red and means errors”.</p>
+              <p>- Keep home screen icons. Helps with visualization of content “pictures of flights and plans and hotels makes it clearer and is nice".</p>
+              <p>- Simple instead of colored Icons.  Users said simple icons are more readable.</p>
+              <p>- Creating a plan after adding a booking and create a plan without booking. Most users want to plan vacation before buying tickets. So I should have both options.</p>
+              <p>- Remove bottom navigation and add more details on trip plans for home screen.</p>
             </article>
           </div>
         </div>  <!-- content -->
@@ -249,12 +265,15 @@
             <header class="process">
               <h3>High-Fidelity - <span>Final test</span></h3>
             </header>
-            <p>Several iterations produced before landing onto the final prototype created with figma.
-              <br>Finally, I  added iterations to the high-fidelity mock-ups and asked users to do a final test. It aimed to understand how users would respond to look and feel.</p>
+            <p>Several iterations produced before landing onto the final prototype created with figma.</p>
+            <p>Finally, I  added iterations to the high-fidelity mock-ups and asked users to do a final test. It aimed to understand how users would respond to look and feel.</p>
+
             <article class="findings">
-              <p>The overall impression was great, people were very excited with the app possibilities and were keen to
-                share their ideas for features improvements. It was invaluable to get their feedback.
-                The brand response seemed to be a success.</p>
+              <p class="p-lighter">(take·a·ways)</p>
+              <p>Overall impression was good, people seemed excited with the app possibilities and were keen to
+                share their ideas for features improvements. It was invaluable to get their feedback. The brand response seemed to deliver it's initial idea.</p>
+              <p>The information design is still not 100% there. New users would still maybe get a little bit confused with features.</p>
+
             </article>
             <div class="img">
               <img src="images/hifimockup/login.png" alt="hi-fi mockup">
@@ -268,8 +287,6 @@
             </div>
           </div>
 
-          <a class="button mockup" href="https://www.figma.com/proto/t7GxAm251xtWmT25uyAc5s/Travel-app-HiFi-MockUp?node-id=57%3A221&viewport=42010%2C-8689%2C3.4277658462524414&scaling=scale-down">View Prototype</a>
-
         </div>  <!-- content -->
 
         <div id="reflection">
@@ -277,9 +294,9 @@
             <h3>Reflection</h3>
           </header>
           <p>This was my very first UX project from start to finish. It was a challenge and the learning curve was steep. The experience was incredibly valuable.
-            <br>I also learned the power of testing, test early and test often. There is nothing like a fresh set of eyes to uncover flaws in early stages. But it also very important to know how to judge feedback. Everyone has great feature ideas and want it to look a certain way. It’s important to focus on your persona and avoid scope creep and focus on the MVP product. For a little while I lost focus. I had to step back many times.
-            <br>If I had more time and resources, I would have worked harder on the information architecture,  logo and name. I would do a few more runs on A/B testing until I was completely satisfied with the user experience.  UX is the key for any product success.
-            <br>For future projects I will spend more time on the IA, that is the biggest challenge on the UI, and then I'll use my mood board and start playing with HIFI layouts before creating a style guide.</p>
+          I learned the power of testing, test early and test often. There is nothing like a fresh set of eyes to uncover flaws in early stages. But it's also very important to know how to judge feedbacks. Everyone has great feature ideas and want it to look a certain way. It’s important to focus on your persona to avoid scope creep and focus on the MVP product. For a little while I lost focus. I had to step back many times.</p>
+          <p>If I had more time and resources, I would have worked harder on the information architecture,  logo and name. I would do a few more runs on A/B testing until I was completely satisfied with the user experience.  UX is the key for product success.</p>
+          <p>For future projects I will spend more time on the IA, that is the biggest challenge on the UI, and then I'll use my mood board and start playing with HIFI layouts before creating a style guide.</p>
         </div>
 
       </section> <!-- container -->
@@ -289,21 +306,21 @@
       <!-- ********************** Footer ********************** -->
       <footer>
         <div id="contact">
-          <h3>Thanks for stopping by.</h3>
-          <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at <a href="carolfalabella@gmail.com">carolfalabella@gmail.com</a></p>
+          <h4>Thanks for stopping by.</h4>
+          <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at <a href="mailto:carolfalabella@gmail.com">carolfalabella@gmail.com</a></p>
         </div>
 
         <div class="copyright">
           <h6>2019, Designed & coded with 💖 by Caroline Falabella</h6>
           <div class="media-links">
             <a href="https://www.linkedin.com/in/carolinefalabella/">
-              <img src="images\linkedin.svg" alt="linkedin link" style="width:42px;height:42px;border:0;">
+              <img src="images/linkedin.svg" alt="linkedin link" style="width:42px;height:42px;border:0;">
             </a>
             <a href="https://www.facebook.com/carolfalabella">
-              <img src="images\facebook.svg" alt="facebook link" style="width:42px;height:42px;border:0;">
+              <img src="images/facebook.svg" alt="facebook link" style="width:42px;height:42px;border:0;">
             </a>
             <a href="https://www.instagram.com/carolfalabella/">
-              <img src="images\intagram.svg" alt="instagram link" style="width:42px;height:42px;border:0;">
+              <img src="images/intagram.svg" alt="instagram link" style="width:42px;height:42px;border:0;">
             </a>
           </div>
         </div>

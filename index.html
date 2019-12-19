@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <meta name="author" content="Caroline Falabella">
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- This is key to allowing Responsive Design occur online. -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href=“https://fonts.googleapis.com/css?family=Poppins&display=swap” rel=“stylesheet”>
   </head>
 
 
@@ -15,19 +19,22 @@
 
     <!-- <div class="wrapContent"> -->
       <!-- ********************** Header ********************** -->
-          <header class="main-nav">
+          <header class="menu-header">
+            <div class="main-nav">
+              <div id="logo">
+                <a href="index.html"><img class="logo-img" src="images/logoCF.svg" alt="Logo"/></a>
+              </div>
 
-            <div id="logo">
-              <a href="index.html"><img class="logo-img" src="images\CFLogo1.svg" alt="Logo"/></a>
+
+              <nav role="navigation">
+                  <ul id="menu">
+                    <li><a href="bio.html">About</a></li>
+                    <li><a href="#fui">Work</a></li>
+                    <!-- <li><a href="#" class="active">Home</a></li> -->
+                    <li><a href="#" class="underline">Home</a></li>
+                  </ul>
+              </nav>
             </div>
-
-
-            <nav role="navigation">
-                <ul id="menu">
-                  <li><a href="bio.html">About</a></li>
-                  <li><a href="#fui">Portfolio</a></li>
-                </ul>
-            </nav>
           </header>
 
       <!-- ********************** Page Intro ********************** -->
@@ -35,9 +42,9 @@
 
           <section id="Page-Intro">
             <div class="wrapper-pageIntro">
-              <h2>Oi, I am Caroline Falabella</h2>
-              <h1>Full Stack Designer Based in Seattle</h1>
-              <h2>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h2>
+              <h4>Oi, I am Caroline Falabella</h4>
+              <h1>Full Stack Designer <em>Based in</em> Seattle</h1>
+              <h4>I am passionate about creating user experiences and interfaces that find simple solutions to complex issues.</h4>
             </div>
           </section>
 
@@ -47,11 +54,11 @@
 
           <section class="case-study" id="fui">
                 <div class="proj-image">
-                  <img src="images\fui_mockup.png" alt="Fui Mockup">
+                  <img src="images/fui_mockup-black.png" alt="Fui Mockup">
                 </div>
 
                 <div class="proj-description">
-                  <h1>Fui Travel App</h1>
+                  <h2>Fui Travel App</h2>
                   <a class="button fui" href="project.html">Case Study</a>
                 </div>
           </section>
@@ -64,21 +71,21 @@
     <footer>
 
       <div id="contact">
-        <h3>Thanks for stopping by.</h3>
-        <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at <a href="carolfalabella@gmail.com">carolfalabella@gmail.com</a></p>
+        <h4>Thanks for stopping by.</h4>
+        <p>Like my work and want to grab coffee or just talk more UX? <br>Send me an email at <a href="mailto:carolfalabella@gmail.com">carolfalabella@gmail.com</a></p>
       </div>
 
       <div class="copyright">
         <h6>2019, Designed & coded with 💖 by Caroline Falabella</h6>
         <div class="media-links">
           <a href="https://www.linkedin.com/in/carolinefalabella/">
-            <img src="images\linkedin.svg" alt="linkedin link" style="width:42px;height:42px;border:0;">
+            <img src="images/linkedin.svg" alt="linkedin link">
           </a>
           <a href="https://www.facebook.com/carolfalabella">
-            <img src="images\facebook.svg" alt="facebook link" style="width:42px;height:42px;border:0;">
+            <img src="images/facebook.svg" alt="facebook link">
           </a>
           <a href="https://www.instagram.com/carolfalabella/">
-            <img src="images\intagram.svg" alt="instagram link" style="width:42px;height:42px;border:0;">
+            <img src="images/intagram.svg" alt="instagram link">
           </a>
         </div>
       </div>
