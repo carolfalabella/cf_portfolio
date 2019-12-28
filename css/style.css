@@ -73,7 +73,7 @@ a {
   height: 64px;
   position: sticky;
   top: 0px;
-  margin-top: -16px;
+  /* margin-top: -16px;  edge wont work properly */
   padding: 0 1em;
   z-index: 3;
 }
@@ -198,6 +198,7 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 2em 1em;
+  margin-top: -15px;
 }
 
 .projName img {
@@ -246,6 +247,7 @@ nav {
   background-color: black;
   top: 0;
   bottom: 0;
+  z-index: -1;
 }
 
 /* Container around content */
@@ -266,7 +268,7 @@ nav {
   border: 3px solid #000;
   top: 50px;
   border-radius: 50%;
-  z-index: 1;
+  z-index: auto;
 }
 
 /* Add arrows pointing left */
